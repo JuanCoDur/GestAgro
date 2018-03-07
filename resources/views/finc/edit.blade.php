@@ -2,10 +2,10 @@
 
 @section('content')
 	<div class="col-sm-8">
-		<h2> 
+		<h5> 
 			Editar finca
 			<a href="{{ route('fincas.index') }}" class="btn btn-default pull-right">Listado</a>
-		</h2>
+		</h5>
 		@include('finc.fragment.error')
 		
 		{!! Form::model($finc, ['route' => ['fincas.update', $finc->id], 'method' => 'PUT']) !!}

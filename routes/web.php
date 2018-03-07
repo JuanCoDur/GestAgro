@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('layouts.principal');
+});*/
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'PrincipalController@index');//agregue esta linea para que mande a la paG INICIO travz del login
+
+Route::get('/home', 'HomeController@index')->name('home');//S EL HOME DE LARAVEL
 
 Route::resource('users','UsersController');
 
@@ -41,16 +43,3 @@ Route::resource('clients','ClientesController');
 
 Route::resource('prov','ProveedoresController');
 
-
-Route::get('empleadoscrod','EmpleadoController@empleadoscrod', function(){
-
-    return view::make('EmpleadoController.empleadoscrod');
-});
-
-Route::get('fincascrod','FincasController@fincascrod', function(){
-
-    return view::make('FincasController.fincascrod');
-});
-
-Route::get('empleadoscrod', array('as' => 'empleadoscrod', 'uses' => 'EmpleadoController@empleadoscrod'));
-Route::get('fincascrod', array('as' => 'fincascrod', 'uses' => 'FincasController@fincascrod'));

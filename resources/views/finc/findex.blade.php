@@ -1,10 +1,11 @@
+
 @extends('layouts.fincalay')
 
 @section('content')
 	<div class="col-sm-8">
-		<h2> Listado de fincas 
+		<h5> Listado de fincas 
 			<a href="{{ route('fincas.create') }}" class="btn btn-primary pull-right">Nuevo</a>
-		</h2>
+		</h5>
 		@include('finc.fragment.info')
 		<table class="table table-hover table-striped">
 			<thead>

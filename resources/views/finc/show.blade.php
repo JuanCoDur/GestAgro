@@ -2,10 +2,10 @@
 
 @section('content')
 	<div class="col-sm-8">
-		<h2> 
+		<h5> 
 			{{ $finc->nomfinca }}
 			<a href="{{ route('fincas.edit', $finc->id) }}" class="btn btn-default pull-right">Editar</a>
-		</h2>
+		</h5>
 		<p>
 			{{ $finc->domfinca }}
 			{{ $finc->ciudad }}

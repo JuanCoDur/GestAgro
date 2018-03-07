@@ -2,18 +2,18 @@
 
 @section('content')
 
-	<div class="col-sm-8">
-		<h2>
+	<div >
+		<h5>
 			{{ $emplea->nomemp }}
 			<a href="{{ route('empleados.edit', $emplea->id) }}"class="btn btn-default pull-right">Editar</a>
-		</h2>
+		</h5>
 	</div>
 	<p>
 		{{ $emplea->celemp }}
 		{{ $emplea->domemp }}
 		{{ $emplea->edocivil }}
 	</p>
-	<div class="col-sm-4">
+	<div>
 		@include('empleado.fragment.aside')
 	</div>
 

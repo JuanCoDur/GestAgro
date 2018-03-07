@@ -2,10 +2,10 @@
 @section('content')
 
 	<div class="col-sm-8">
-		<h2>
+		<h5>
 			Nuevo Empleado
 			<a href="{{ route('empleados.index') }}"class="btn btn-default pull-right">Listado</a>
-		</h2>
+		</h5>
 
 		@include('empleado.fragment.error')
 

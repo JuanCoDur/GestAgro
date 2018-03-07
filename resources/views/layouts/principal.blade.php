@@ -6,21 +6,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+       <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script> 
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+       <!--lo que tengo en principal css-->
+       <link rel="stylesheet" href="{{asset('css/menu.css')}}">
+       <script src="{{asset('js/menu.js')}}"></script>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <!--Import Google Icon Font-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- Compiled and minified CSS -->
-  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		
-		<!-- Compiled and minified JavaScript -->
-  		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-		
 	</head>
 	<body>
 		
 		@extends('layouts.navbar')
+    
     </body>
 </html>

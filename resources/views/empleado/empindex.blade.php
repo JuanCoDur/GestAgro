@@ -2,12 +2,12 @@
 
 @section('content')
 	<div class="col-sm-8">
-		<h2>
+		<h5 class="rgba-orange-strong">
 			Lista de empleados
 			<a href="{{ route('empleados.create') }}" class="btn btn-primary pull-right">Nuevo</a>
-		</h2>
+		</h5>
 		@include('empleado.fragment.info')
-		<table class="table table-hover table-striped">
+		<table class="table table-hover table-striped rgba-orange-strong">
 			<thead>
 				<tr>
 					<th>Nombre</th>
