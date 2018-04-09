@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\View;
 class ClasController extends Controller
 {
      public function index(){
-    	$class=clasificaciones::orderBy('id','DESC')->paginate();
+    	$class=clasificaciones::orderBy('id','DESC')->paginate('7');
     	return view('clasif.clasindex', compact('class'));
     }
 

@@ -7,7 +7,9 @@
 			<a href="{{ route('empleados.create') }}" class="btn btn-primary pull-right">Nuevo</a>
 		</h5>
 		@include('empleado.fragment.info')
-		<table class="table table-hover table-striped rgba-orange-strong">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="table-responsive">
+		<table class="table table-striped table-condensed table-hover rgba-orange-strong">
 			<thead>
 				<tr>
 					<th>Nombre</th>
@@ -50,27 +52,29 @@
 					<td>{{ $empleado->jefedirecto }}</td>
 					<td>{{ $empleado->subordinados }}</td>
 					<td>
-						<a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-link">ver</a>
+						<a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-info">ver</a>
 					</td>
 					<td>
-						<a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-link">editar</a>
+						<a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-info">editar</a>
 					</td>
 					<td>
 						<form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST">
 							{{ csrf_field() }}
 							<input type="hidden" name="_method" value="DELETE">
-							<button class="btn btn-link">Borrar</button>
+							<button class="btn btn-danger">Borrar</button>
 						</form>
 					</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
+		</div>
+		</div>
 		{!! $empleado->render !!}
-		@include('empleado.fragment.aside')
+		
 	</div>
 	<div class="col-sm-4">
-		
+		@include('empleado.fragment.aside')
 	</div>
 	
 	

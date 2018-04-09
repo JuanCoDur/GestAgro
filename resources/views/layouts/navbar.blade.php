@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="">
-                <img src="image/logo.png" height="60px" weight="60px">                
+                <img src="image/logo.png" height="53px" weight="53px">                
             </a>
         </div>
         <!-- Top Menu Items -->
@@ -45,36 +45,53 @@
                     <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Finca <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
                         <li><a href="{{ route('fincas.index') }}"><i class="fa fa-angle-double-right"></i>Listado y edición</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Empleados</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Reporte</a></li>
+                        <li><a href="{{ route('predio.index') }}"><i class="fa fa-angle-double-right"></i>Predio</a></li>
+                        <li><a href="{{ route('pozo.index') }}"><i class="fa fa-angle-double-right"></i>Pozos</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Recursos materiales <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Recursos humanos <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-2" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Maquinaria</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Vehiculos</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Tipo Vehiculos</a></li>
+                        <li><a href="{{ route('empleados.index') }}"><i class="fa fa-angle-double-right"></i> Empleados</a></li>
+        
                     </ul>
                 </li>
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-star"></i>  Productos <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-star"></i>  Recursos materiales <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-3" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Maquinaria</a></li>
+                        <li><a href="{{ route('vehic.index') }}"><i class="fa fa-angle-double-right"></i> Vehiculos</a></li>
+                        <li><a href="{{ route('tipveh.index') }}"><i class="fa fa-angle-double-right"></i> Tipo Vehiculos</a></li>
+                        <li><a href="{{ route('marcas.index') }}"><i class="fa fa-angle-double-right"></i> Marcas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-4"><i class="fa fa-fw fa-star"></i>  Productos <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-4" class="collapse">
+                        <li><a href="#"><i class="fa fa-angle-double-right"></i> listado y edicion</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Inventario</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Compras</a></li>
                         <li><a href="#"><i class="fa fa-angle-double-right"></i> Ventas</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="investigaciones/favoritas"><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
+                    <a href="{{ route('clients.index') }}"><i class="fa fa-fw fa-star"></i>  Clientes</a>
                 </li>
                 <li>
-                    <a href="sugerencias"><i class="fa fa-fw fa-paper-plane-o"></i> MENU 4</a>
+                    <a href="{{ route('prov.index') }}"><i class="fa fa-fw fa-star"></i> Proveedores</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-user-plus"></i>  menu3</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-fw fa-paper-plane-o"></i> menu3</a>
                 </li>
                 <li>
                     <a href="faq"><i class="fa fa-fw fa fa-question-circle"></i> MENU 5</a>
                 </li>
+
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </nav>

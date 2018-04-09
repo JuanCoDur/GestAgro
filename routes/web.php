@@ -43,3 +43,7 @@ Route::resource('clients','ClientesController');
 
 Route::resource('prov','ProveedoresController');
 
+Route::resource('activities','ActividadesCOntroller');
+
+Route::resource('pozo','PozosController');
+

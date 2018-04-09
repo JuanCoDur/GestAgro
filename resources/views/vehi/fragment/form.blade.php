@@ -1,5 +1,5 @@
 
-<div class="form-group">
+	<div class="form-group">
 	<label for="">Tipo de vehiculo</label>
 	<select name="idTipoV" id="idTipoV" class="form-control">
 		<option value="">Elija un tipo</option>
