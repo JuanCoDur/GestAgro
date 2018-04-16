@@ -18,8 +18,8 @@ class CreateProductosTable extends Migration
             $table->integer('idClasif')->unsigned();
             $table->string('nomProducto');
             $table->text('descripcion')->nullable();
-            $table->decimal('costo', 6,2);
-            $table->decimal('preciovta', 6,2);
+            $table->decimal('costo', 6,2)->nullable();
+            $table->decimal('preciovta', 6,2)->nullable();
 
             $table->timestamps();
 
