@@ -17,4 +17,4 @@
 		@include('proveedr.fragment.aside')
 	</div>
 
-@endsectionphp
+@endsection

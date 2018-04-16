@@ -2,9 +2,8 @@
 
 @section('content')
 	<div class="col-sm-8">
-		<h5 class="rgba-orange-strong">
-			Lista de empleados
-			<a href="{{ route('empleados.create') }}" class="btn btn-primary pull-right">Nuevo</a>
+		<h5>
+			Lista de empleados <a href="{{ route('empleados.create') }}" class="btn btn-primary pull-right">Nuevo</a>
 		</h5>
 		@include('empleado.fragment.info')
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
