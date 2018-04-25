@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/', 'PrincipalController@index');//agregue esta linea para que mande a la paG INICIO travz del login
 
-Route::get('/home', 'HomeController@index')->name('home');//S EL HOME DE LARAVEL
+Route::get('/home', 'PrincipalController@index')->name('home');//S EL HOME DE LARAVEL
 
 Route::resource('users','UsersController');
 
