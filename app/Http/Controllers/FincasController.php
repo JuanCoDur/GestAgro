@@ -11,9 +11,8 @@ use Illuminate\Support\Facades\View;
 class FincasController extends Controller
 {
     public function index(){
-
-    	$fin= fincas::orderBy('id','DESC')->paginate();
-    	return view('finc.findex', compact('fin'));
+    	$finc= fincas::orderBy('id','DESC')->paginate();
+    	return view('finc.findex', compact('finc'));
     }
 
     public function fincascrod(){

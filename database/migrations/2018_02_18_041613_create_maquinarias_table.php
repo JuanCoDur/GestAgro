@@ -17,7 +17,6 @@ class CreateMaquinariasTable extends Migration
             $table->increments('id');
             $table->integer('idFiinc')->unsigned();
             $table->integer('idmarc')->unsigned();
-            $table->string('Marca', 25);
             $table->string('Combustible', 8)->nullable();
             $table->string('Rendimiento', 25)->nullable();
             $table->string('ModeloMaq', 15);

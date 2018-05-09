@@ -16,9 +16,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($fin as $finca)
+				@foreach($finc as $finca)
 				<tr>
-					
 					<td>
 						<strong>{{ $finca->nomfinca }}</strong>
 						{{ $finca->domfinca }}
@@ -43,7 +42,7 @@
 				@endforeach
 			</tbody>
 		</table>
-		{!! $finca->render !!}
+		{!! $finc->render() !!}
 	</div>
 	<div class="col-sm-4">
 		@include('finc.fragment.aside')

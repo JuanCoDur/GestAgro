@@ -18,7 +18,6 @@ class CreateVehiculosTable extends Migration
             $table->integer('idTipoV')->unsigned();
             $table->integer('idFinca')->unsigned();
             $table->integer('idmarc')->unsigned();
-            $table->string('Marca', 25);
             $table->string('Combustible', 8)->nullable();
             $table->string('Rendimiento', 25)->nullable();
             $table->string('ModeloVeh', 15);

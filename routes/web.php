@@ -47,3 +47,5 @@ Route::resource('activities','ActividadesCOntroller');
 
 Route::resource('pozo','PozosController');
 
+Route::resource('maqui','MaquinariaController');
+

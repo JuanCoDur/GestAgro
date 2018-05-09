@@ -13,7 +13,7 @@ class MaquinariaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class MaquinariaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'idFiinc'    => 'required',
+            'idmarc'     => 'required',
+            'Combustible'=> 'required',
+            'Rendimiento'=> 'required',
+            'ModeloMaq'  => 'required',
+            'yearFabricacion' => 'required',
+            'Adepreciacion' => 'required',
+            'ValorActMaq'   => 'required',
+            'Unidad'   => 'required',
+            'noSerieMotor'   => 'required'
         ];
     }
 }

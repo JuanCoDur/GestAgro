@@ -70,7 +70,7 @@
 		</table>
 		</div>
 		</div>
-		{!! $empleado->render !!}
+		{!! $emp->render() !!}
 		
 	</div>
 	<div class="col-sm-4">

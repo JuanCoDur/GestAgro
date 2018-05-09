@@ -59,7 +59,7 @@
                 <li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-3"><i class="fa fa-fw fa-star"></i>  Recursos materiales <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-3" class="collapse">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Maquinaria</a></li>
+                        <li><a href="{{ route('maqui.index') }}"><i class="fa fa-angle-double-right"></i> Maquinaria</a></li>
                         <li><a href="{{ route('vehic.index') }}"><i class="fa fa-angle-double-right"></i> Vehiculos</a></li>
                         <li><a href="{{ route('tipveh.index') }}"><i class="fa fa-angle-double-right"></i> Tipo Vehiculos</a></li>
                         <li><a href="{{ route('marcas.index') }}"><i class="fa fa-angle-double-right"></i> Marcas</a></li>
@@ -81,7 +81,7 @@
                     <a href="{{ route('prov.index') }}"><i class="fa fa-fw fa-star"></i> Proveedores</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-user-plus"></i>  menu3</a>
+                    <a href="#"><i class="fa fa-fw fa-user-plus"></i>Actividades</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-paper-plane-o"></i> menu3</a>
