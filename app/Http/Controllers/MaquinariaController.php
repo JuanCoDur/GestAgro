@@ -43,29 +43,29 @@ class MaquinariaController extends Controller
 
     public function update(MaquinariaRequest $request, $id){
 
-        $veh=vehiculos::find($id);
-        $veh->idTipoV = $request->idTipoV;
-        $veh->idFinca = $request->idFinca;
-        $veh->idmarc = $request->idmarc;
-        $veh->Marca = $request->Marca;
-        $veh->Combustible = $request->Combustible;
-        $veh->Rendimiento = $request->Rendimiento;
-        $veh->ModeloVeh = $request->ModeloVeh;
-        $veh->yearFabricacion = $request->yearFabricacion;
-        $veh->Adepreciacion = $request->Adepreciacion;
-        $veh->ValorActVeh = $request->ValorActVeh;
-        $veh->Placa = $request->Placa;
-        $veh->save();
+        $maq=vehiculos::find($id);
+        $maq->idTipoV = $request->idTipoV;
+        $maq->idFinca = $request->idFinca;
+        $maq->idmarc = $request->idmarc;
+        $maq->Marca = $request->Marca;
+        $maq->Combustible = $request->Combustible;
+        $maq->Rendimiento = $request->Rendimiento;
+        $maq->ModeloVeh = $request->ModeloVeh;
+        $maq->yearFabricacion = $request->yearFabricacion;
+        $maq->Adepreciacion = $request->Adepreciacion;
+        $maq->ValorActVeh = $request->ValorActVeh;
+        $maq->Placa = $request->Placa;
+        $maq->save();
         return redirect()->route('vehic.index')
             ->with('info', 'Actualizado correctamente');
     }
 
     public function edit($id){
-        $fin = fincas::all();
-        $marc = marcas::all();
-        $tipv = tipsvehiculos::all();
-        $veh=vehiculos::find($id);
-        return view('vehi.edit', compact('veh','fin','marc','tipv'));
+//        $fin = fincas::all();
+//        $marc = marcas::all();
+//        $tipv = tipsvehiculos::all();
+//        $veh=vehiculos::find($id);
+//        return view('vehi.edit', compact('veh','fin','marc','tipv'));
     }
 
     public function show($id){

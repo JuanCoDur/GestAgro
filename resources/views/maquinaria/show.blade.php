@@ -12,6 +12,7 @@
         {{--<a href="{{ route('clasifi.edit', $class->id) }}"class="btn btn-default pull-right">Editar</a>--}}
         {{--</h2>--}}
         <a href="{{ route('maqui.index') }}" class="btn btn-info" role="button">Regresar</a>
+        {{--<a href="{{ route('maqui.edit') }}" class="btn btn-info">Editar</a>--}}
         <div class="col-sm-8">
             <div>
                 <br>
