@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 
 class ProveedoresController extends Controller
 {
+    
     public function index(){
     	$prove=proveedores::orderBy('id','DESC')->paginate();
     	return view('proveedr.provindex', compact('prove'));

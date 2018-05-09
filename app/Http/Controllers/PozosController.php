@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 
 class PozosController extends Controller
 {
+    
     public function index(){
     	$poz=pozos::orderBy('id','DESC')->paginate();
     	return view('poozos.pozoindex', compact('poz'));

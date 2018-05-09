@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\View;
 
 class TipvehController extends Controller
 {
+     
     public function index(){
     	$tp=tipsvehiculos::orderBy('id','DESC')->paginate();
     	return view('tipvehlo.tpindex', compact('tp'));

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\View;
 
 class ClientesController extends Controller
 {
+     
+
      public function index(){
     	$cli=clientes::orderBy('id','DESC')->paginate();
     	return view('client.clindex', compact('cli'));

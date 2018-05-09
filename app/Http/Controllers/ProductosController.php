@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\View;
 
 class ProductosController extends Controller
 {
+     
     public function index(){
     	$prodd=productos::orderBy('id','DESC')->paginate();
     	return view('produc.prodindex', compact('prodd'));

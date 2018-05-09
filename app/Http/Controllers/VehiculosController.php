@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\View;
 
 class VehiculosController extends Controller
 {
+    
     public function index(){
     	$veh=vehiculos::orderBy('id','DESC')->paginate();
     	return view('vehi.vehindex', compact('veh'));

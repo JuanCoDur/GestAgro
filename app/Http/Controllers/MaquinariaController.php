@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class MaquinariaController extends Controller
 {
+    
     public function index(){
         $maq=maquinarias::orderBy('id','DESC')->paginate();
         return view('maquinaria.maqindex', compact('maq'));

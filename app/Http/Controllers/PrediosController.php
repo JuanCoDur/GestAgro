@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\View;
 
 class PrediosController extends Controller
 {
+     
     public function index(){
     	$pre=predios::orderBy('id','DESC')->paginate();
     	return view('pred.preindex', compact('pre'));

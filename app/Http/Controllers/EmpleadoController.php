@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\View;
 
 class EmpleadoController extends Controller
 {
-
+    
 	 public function index(){
 
     	$emp= empleados::orderBy('id','DESC')->paginate();
