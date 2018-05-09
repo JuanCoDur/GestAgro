@@ -35,7 +35,7 @@
                                 <a href="{{ route('maqui.show', $mqn->id) }}" class="btn btn-info">Detalles</a>
                             </td>
                             {{--<td>--}}
-                                {{--<a href="{{ route('clasifi.edit', $mqn->id) }}" class="btn btn-info">editar</a>--}}
+                                {{--<a href="{{ route('maqui.edit', $mqn->id) }}" class="btn btn-info">Editar</a>--}}
                             {{--</td>--}}
                             {{--<td>--}}
                                 {{--<form action="{{ route('clasifi.destroy', $mqn->id) }}" method="POST">--}}

@@ -43,29 +43,27 @@ class MaquinariaController extends Controller
 
     public function update(MaquinariaRequest $request, $id){
 
-        $maq=vehiculos::find($id);
-        $maq->idTipoV = $request->idTipoV;
-        $maq->idFinca = $request->idFinca;
+        $maq=maquinarias::find($id);
+        $maq->idFiinc = $request->idFiinc; //primer valor es la caja de texto, segundo es la BD
         $maq->idmarc = $request->idmarc;
-        $maq->Marca = $request->Marca;
         $maq->Combustible = $request->Combustible;
         $maq->Rendimiento = $request->Rendimiento;
-        $maq->ModeloVeh = $request->ModeloVeh;
+        $maq->ModeloMaq = $request->ModeloMaq;
         $maq->yearFabricacion = $request->yearFabricacion;
         $maq->Adepreciacion = $request->Adepreciacion;
-        $maq->ValorActVeh = $request->ValorActVeh;
-        $maq->Placa = $request->Placa;
+        $maq->valorActMaq = $request->ValorActMaq;
+        $maq->Unidad = $request->Unidad;
+        $maq->noSerieMotor = $request->noSerieMotor;
         $maq->save();
-        return redirect()->route('vehic.index')
+        return redirect()->route('maqui.index')
             ->with('info', 'Actualizado correctamente');
     }
 
     public function edit($id){
-//        $fin = fincas::all();
-//        $marc = marcas::all();
-//        $tipv = tipsvehiculos::all();
-//        $veh=vehiculos::find($id);
-//        return view('vehi.edit', compact('veh','fin','marc','tipv'));
+        $fin = fincas::all();
+        $marc = marcas::all();
+        $maq = maquinarias::find($id);
+        return view('maquinaria.edit', compact('fin','marc', 'maq'));
     }
 
     public function show($id){
