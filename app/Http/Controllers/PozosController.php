@@ -8,7 +8,10 @@ use App\Http\Requests\PozosRequest;
 use Illuminate\Support\Facades\View;
 
 class PozosController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
     	$poz=pozos::orderBy('id','DESC')->paginate();
     	return view('poozos.pozoindex', compact('poz'));

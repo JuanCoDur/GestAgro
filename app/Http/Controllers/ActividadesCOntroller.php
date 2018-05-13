@@ -10,7 +10,10 @@ use Illuminate\Http\Request;
 
 class ActividadesCOntroller extends Controller
 {
-     public function index(){
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    public function index(){
 
     	$act= actividades::orderBy('id','DESC')->paginate();
     	return view('activ.actindex', compact('act'));

@@ -25,16 +25,16 @@
                 <ul class="dropdown-menu">                	
                     <!--<li><a href="#"><i class="fa fa-fw fa-user"></i> perfil</a></li>-->
                     <li><a href="#">{{ auth()->user()->email }}</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-cog"></i>Editar</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Editar</a></li>
                     <li class="divider"></li>
                     <li><a class="white-text" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            <i class="fa fa-fw fa-power-off"></i>Cerrar Session
-                                        </a>
-			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form></li>
+                            onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                            <i class="fa fa-fw fa-power-off"></i>Cerrar Session
+                        </a>
+			        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form></li>
                 </ul>
             </li>
         </ul>
@@ -81,7 +81,7 @@
                     <a href="{{ route('prov.index') }}"><i class="fa fa-fw fa-star"></i> Proveedores</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-user-plus"></i>Actividades</a>
+                    <a href="{{ route('activities.index') }}"><i class="fa fa-fw fa-user-plus"></i>Actividades</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-paper-plane-o"></i> menu3</a>

@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\View;
 
 class EmpleadoController extends Controller
 {
-
-	 public function index(){
+    public function __construct(){
+        $this->middleware('auth');
+    }
+	public function index(){
 
     	$emp= empleados::orderBy('id','DESC')->paginate();
     	return view('empleado.empindex', compact('emp'));

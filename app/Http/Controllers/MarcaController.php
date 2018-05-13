@@ -8,7 +8,10 @@ use App\Http\Requests\MarcaRequest;
 use Illuminate\Support\Facades\View;
 
 class MarcaController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
     	$marc=marcas::orderBy('id','DESC')->paginate();
     	return view('marca.marindex', compact('marc'));

@@ -8,7 +8,10 @@ use App\Http\Requests\TipvehRequest;
 use Illuminate\Support\Facades\View;
 
 class TipvehController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
     	$tp=tipsvehiculos::orderBy('id','DESC')->paginate();
     	return view('tipvehlo.tpindex', compact('tp'));

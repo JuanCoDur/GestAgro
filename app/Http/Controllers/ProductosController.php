@@ -10,7 +10,10 @@ use App\Http\Requests\ProductosRequest;
 use Illuminate\Support\Facades\View;
 
 class ProductosController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
     	$prodd=productos::orderBy('id','DESC')->paginate();
     	return view('produc.prodindex', compact('prodd'));

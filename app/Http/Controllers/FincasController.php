@@ -9,7 +9,10 @@ use App\Http\Requests\FincasRequest;
 use Illuminate\Support\Facades\View;
 
 class FincasController extends Controller
-{
+{   
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function index(){
     	$finc= fincas::orderBy('id','DESC')->paginate();
     	return view('finc.findex', compact('finc'));
@@ -63,8 +66,8 @@ class FincasController extends Controller
     					 ->with('info', 'El producto fue actualizado');
     }
 
-    public function show($id){
-
+    public function show( $id){
+        
     	$finc = fincas::find($id);
     	return view('finc.show', compact('finc'));
     }
@@ -76,4 +79,5 @@ class FincasController extends Controller
 
     	return back()->with('info', 'El producto fue eliminado');
     }
+  
 }

@@ -4,9 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FincasRequest extends FormRequest
+class UsuarioRequest extends FormRequest
 {
-   
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,12 +24,10 @@ class FincasRequest extends FormRequest
     public function rules()
     {
         return [
-            'nomfinca' => 'required',
-            'domfinca' => 'required',
-            'telfinca' => 'required',
-            'ciudad'   => 'required',
-            'estado'   => 'required',
-            'us_id'    => 'required'
+            'name' => 'required|string|max:255',
+            'phone' => 'numeric',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed'
         ];
     }
 }

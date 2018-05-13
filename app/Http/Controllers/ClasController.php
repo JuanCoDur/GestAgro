@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\View;
 
 class ClasController extends Controller
 {
+     public function __construct(){
+        $this->middleware('auth');
+    }
      public function index(){
     	$class=clasificaciones::orderBy('id','DESC')->paginate('7');
     	return view('clasif.clasindex', compact('class'));

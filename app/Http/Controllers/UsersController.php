@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\User;
+
 use App\Carbon;
 use Illuminate\Http\Request;
+use App\Http\Requests\UsuarioRequest;
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller
 {
@@ -16,7 +19,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $us=User::orderBy('id');
+        return view('usuarios.usindex', compact('us'));
     }
 
     /**
@@ -75,7 +79,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        /*$us=User::find($id);
+        return view('usuarios.edit', compact('us'));*/
     }
 
     /**
@@ -87,7 +92,17 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /*$us = User::find($id);
+
+        $us->name = $request->name;
+        //$us->phone = $request->phone;
+        $us->email = $request->email;
+        $us->password =$request->password;
+
+        $us->save();
+
+        return redirect()->route('users.index')
+                         ->with('info', 'Actualizado Correctamente');*/
     }
 
     /**
@@ -101,15 +116,15 @@ class UsersController extends Controller
         //
     }
 
-    public function validacion($request)
+    /*public function validacion($request)
     {
         return $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'lastname' => 'required|max:255',
+            //'lastname' => 'required|max:255',
             //'phone' => 'numeric|unique:users',
             'phone' => 'numeric',
             'email' => 'required|email|unique:users|max:255',
             'password' => 'required|confirmed|max:255',
         ]);
-    }
+    }*/
 }

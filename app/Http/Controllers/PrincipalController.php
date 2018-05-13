@@ -25,4 +25,5 @@ class PrincipalController extends Controller
     {
         return view('layouts.principal');
     }
+
 }
