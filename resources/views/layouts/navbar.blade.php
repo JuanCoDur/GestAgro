@@ -25,7 +25,7 @@
                 <ul class="dropdown-menu">                	
                     <!--<li><a href="#"><i class="fa fa-fw fa-user"></i> perfil</a></li>-->
                     <li><a href="#">{{ auth()->user()->email }}</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Editar</a></li>
+                    <li><a href="{{ route('users.index') }}"><i class="fa fa-cog"></i> Perfil</a></li>
                     <li class="divider"></li>
                     <li><a class="white-text" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

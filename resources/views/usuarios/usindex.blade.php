@@ -13,13 +13,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($us as $use)
+                    @foreach($us as $usa)
                         <tr>
                             <td>
-                                <strong>{{ $use->id }}</strong>
+                                <strong>{{ $usa->name }}</strong>
                             </td>
                             <td>
-                                <a href="{{ route('users.edit', $use->id) }}" class="btn btn-info">Editar</a>
+                                <a href="{{ route('users.edit', $usa->id) }}" class="btn btn-info">Editar</a>
                             </td>
                         </tr>
                     @endforeach
