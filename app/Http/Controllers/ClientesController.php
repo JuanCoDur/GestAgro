@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\clientes;
+use App\cliente;
 use App\Http\Requests\ClientesRequest;
 use Illuminate\Support\Facades\View;
 
@@ -13,18 +13,18 @@ class ClientesController extends Controller
         $this->middleware('auth');
     }
      public function index(){
-    	$cli=clientes::orderBy('id','DESC')->paginate();
+    	$cli=cliente::orderBy('id','DESC')->paginate();
     	return view('client.clindex', compact('cli'));
     }
 
  	 public function create(){
-    	$cli = clientes::all();
+    	$cli = cliente::all();
     	return view('client.create', compact('cli'));
     }
 
     public function store(ClientesRequest $request){
 
-    	$cli = new clientes;
+    	$cli = new cliente;
     	
     	$cli->nomCte = $request->nomCte;
     	$cli->domCte = $request->domCte;
@@ -33,13 +33,13 @@ class ClientesController extends Controller
     	$cli->RFCte = $request->RFCte;
     	$cli->save();
 
-    	return redirect()->route('clients.index')
+    	return redirect()->route('client.index')
     					 ->with('info', 'Creado correctamente');
     }
 
     public function update(ClientesRequest $request, $id){
 
-    	$cli= clientes::find($id);
+    	$cli= cliente::find($id);
 
     	$cli->nomCte = $request->nomCte;
     	$cli->domCte = $request->domCte;
@@ -53,17 +53,17 @@ class ClientesController extends Controller
 
  	public function edit($id){
     	
-    	$cli=clientes::find($id);
-    	return view('client.edit', compact('cli'));
+    	$cli=cliente::find($id);
+    	return view('cliente.edit', compact('cli'));
     }
 
     public function show($id){
-    	$cli=clientes::find($id);
-    	return view('client.show', compact('cli'));
+    	$cli=cliente::find($id);
+    	return view('cliente.show', compact('cli'));
     }
 
     public function destroy($id){
-    	$cli=clientes::find($id);
+    	$cli=cliente::find($id);
     	$cli->delete();
 
     	return back()->with('info', 'Campo eliminado correctamente');

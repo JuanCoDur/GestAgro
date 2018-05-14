@@ -4,7 +4,7 @@
 @section('content')
 	<div class="col-sm-8">
 		<h5> Listado de fincas 
-			<a href="{{ route('fincas.create') }}" class="btn btn-primary pull-right">Nuevo</a>
+			<a href="{{ route('finca.create') }}" class="btn btn-primary pull-right">Nuevo</a>
 		</h5>
 		@include('finc.fragment.info')
 		<table class="table table-hover table-striped">
@@ -26,13 +26,13 @@
 					</td>
 					<td>{{ $finca->telfinca }}</td>
 					<td>
-						<a href="{{ route('fincas.show', $finca->id) }}" class=" btn btn-link">ver</a> 
+						<a href="{{ route('finca.index', $finca->id) }}" class=" btn btn-link">ver</a>
 					</td>
 					<td>
-						<a href="{{ route('fincas.edit', $finca->id) }}" class=" btn btn-link">editar</a>
+						<a href="{{ route('finca.edit', $finca->id) }}" class=" btn btn-link">editar</a>
 					</td>
 					<td>
-						<form action="{{ route('fincas.destroy', $finca->id) }}" method="POST">
+						<form action="{{ route('finca.destroy', $finca->id) }}" method="POST">
 							{{ csrf_field() }}
 							<input type="hidden" name="_method" value="DELETE">
 							<button class=" btn btn-link">borrar</button>

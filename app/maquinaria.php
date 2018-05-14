@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class maquinarias extends Model
+class maquinaria extends Model
 {
     protected $fillable = [
         'idFiinc','idmarc','Marca','Combustible','Rendimiento','ModeloMaq','yearFabricacion','Adepreciacion',

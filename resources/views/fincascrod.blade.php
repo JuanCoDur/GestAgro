@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="links">
-		<a href="{{ route('fincas.index') }}">Listado de fincas</a>
+		<a href="{{ route('finca') }}">Listado de fincas</a>
 	
 	</div>
 </body>

@@ -14,7 +14,7 @@ class FincasController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-    	$finc= fincas::orderBy('id','DESC')->paginate();
+    	$finc= finca::orderBy('id','DESC')->paginate();
     	return view('finc.findex', compact('finc'));
     }
 
@@ -29,7 +29,7 @@ class FincasController extends Controller
     }
 
     public function store(FincasRequest $request){
-    	$finc = new fincas;
+    	$finc = new finca;
     	
     	$finc->nomfinca = $request->nomfinca;
     	$finc->domfinca = $request->domfinca;
@@ -40,18 +40,18 @@ class FincasController extends Controller
 
     	$finc->save();
 
-    	return redirect()->route('fincas.index')
+    	return redirect()->route('finca.index')
     					 ->with('info', 'El producto se agrego correctamente');
     }
 
 	public function edit($id){
         $us = User::all();
-    	$finc = fincas::find($id);
+    	$finc = finca::find($id);
     	return view('finc.edit', compact('finc','us'));
     }
 
     public function update(FincasRequest $request, $id){
-    	$finc = fincas::find($id);
+    	$finc = finca::find($id);
 
     	$finc->nomfinca = $request->nomfinca;
     	$finc->domfinca = $request->domfinca;
@@ -62,19 +62,22 @@ class FincasController extends Controller
 
     	$finc->save();
 
-    	return redirect()->route('fincas.index')
+    	return redirect()->route('finca.index')
     					 ->with('info', 'El producto fue actualizado');
     }
 
-    public function show( $id){
-        
     	$finc = fincas::find($id);
+
+    public function show($id){
+
+    	$finc = finca::find($id);
+
     	return view('finc.show', compact('finc'));
     }
 
     public function destroy($id){
 
-    	$finc = fincas::find($id);
+    	$finc = finca::find($id);
     	$finc->delete();
 
     	return back()->with('info', 'El producto fue eliminado');

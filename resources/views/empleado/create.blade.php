@@ -4,12 +4,12 @@
 	<div class="col-sm-8">
 		<h5>
 			Nuevo Empleado
-			<a href="{{ route('empleados.index') }}"class="btn btn-default pull-right">Listado</a>
+			<a href="{{ route('empleado.index') }}"class="btn btn-default pull-right">Listado</a>
 		</h5>
 
 		@include('empleado.fragment.error')
 
-		{!! Form::open(['route' => 'empleados.store']) !!}
+		{!! Form::open(['route' => 'empleado.store']) !!}
 
 		@include('empleado.fragment.form')
 

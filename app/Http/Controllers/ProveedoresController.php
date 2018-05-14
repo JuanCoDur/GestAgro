@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\proveedores;
+use App\proveedor;
 use App\Http\Requests\ProveedoresRequest;
 use Illuminate\Support\Facades\View;
 
@@ -13,7 +13,7 @@ class ProveedoresController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-    	$prove=proveedores::orderBy('id','DESC')->paginate();
+    	$prove=proveedor::orderBy('id','DESC')->paginate();
     	return view('proveedr.provindex', compact('prove'));
     }
 
@@ -23,7 +23,7 @@ class ProveedoresController extends Controller
 
     public function store(ProveedoresRequest $request){
 
-    	$prove = new proveedores;
+    	$prove = new proveedor;
     	$prove->RFCProv = $request->RFCProv;
     	$prove->nomProv = $request->nomProv;
     	$prove->domProv = $request->domProv;
@@ -38,7 +38,7 @@ class ProveedoresController extends Controller
 
     public function update(ProveedoresRequest $request, $id){
 
-    	$prove= proveedores::find($id);
+    	$prove= proveedor::find($id);
 
     	$prove->RFCProv = $request->RFCProv;
     	$prove->nomProv = $request->nomProv;
@@ -53,17 +53,17 @@ class ProveedoresController extends Controller
 
  	public function edit($id){
     	
-    	$prove=proveedores::find($id);
+    	$prove=proveedor::find($id);
     	return view('proveedr.edit', compact('prove'));
     }
 
     public function show($id){
-    	$prove=proveedores::find($id);
+    	$prove=proveedor::find($id);
     	return view('proveedr.show', compact('prove'));
     }
 
     public function destroy($id){
-    	$prove=proveedores::find($id);
+    	$prove=proveedor::find($id);
     	$prove->delete();
 
     	return back()->with('info', 'Campo eliminado correctamente');

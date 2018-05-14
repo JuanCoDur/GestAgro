@@ -13,7 +13,7 @@ class CreateTipsvehiculosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipsvehiculos', function (Blueprint $table) {
+        Schema::create('tipsvehiculo', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomTipo');
 
@@ -29,6 +29,6 @@ class CreateTipsvehiculosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipsvehiculos');
+        Schema::dropIfExists('tipsvehiculo');
     }
 }

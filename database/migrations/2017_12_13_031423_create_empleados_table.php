@@ -13,7 +13,7 @@ class CreateEmpleadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('empleado', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fin_id')->unsigned();
             $table->string('nomemp');
@@ -47,6 +47,6 @@ class CreateEmpleadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('empleado');
     }
 }

@@ -5,12 +5,12 @@
 	<div class="col-sm-8">
 		<h2>
 			Nueva Marca
-			<a href="{{ route('marcas.index') }}"class="btn btn-default pull-right">Listado</a>
+			<a href="{{ route('marca.index') }}"class="btn btn-default pull-right">Listado</a>
 		</h2>
 
 		@include('marca.fragment.error')
 
-		{!! Form::open(['route' => 'marcas.store']) !!}
+		{!! Form::open(['route' => 'marca.store']) !!}
 			@include('marca.fragment.form')
 		{!! Form::close() !!}
 	</div>

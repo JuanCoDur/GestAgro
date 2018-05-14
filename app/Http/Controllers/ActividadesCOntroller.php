@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\actividades;
+use App\actividad;
 use App\Http\Requests\ActividadesRequest;
 use Illuminate\Support\Facades\View;
 
@@ -15,17 +16,17 @@ class ActividadesCOntroller extends Controller
     }
     public function index(){
 
-    	$act= actividades::orderBy('id','DESC')->paginate();
+    	$act= actividad::orderBy('id','DESC')->paginate();
     	return view('activ.actindex', compact('act'));
     }
 
 	public function create(){
-    	$act = actividades::all();
+    	$act = actividad::all();
     	return view('activ.create', compact('act'));
     }
 
     public function store(ActividadesRequest $request){
-    	$act = new actividades;
+    	$act = new actividad;
     	
     	$act->idFiinca = $request->idFiinca;
     	$act->NomPredio = $request->NomPredio;
@@ -42,12 +43,12 @@ class ActividadesCOntroller extends Controller
 
 	public function edit($id){
     	
-    	$act  = actividades::find($id);
+    	$act  = actividad::find($id);
     	return view('activ.edit', compact('act'));
     }
 
     public function update(ActividadesRequest $request, $id){
-    	$act = actividades::find($id);
+    	$act = actividad::find($id);
 
     	$act->idFiinca = $request->idFiinca;
     	$act->NomPredio = $request->NomPredio;
@@ -64,13 +65,13 @@ class ActividadesCOntroller extends Controller
 
     public function show($id){
 
-    	$act = actividades::find($id);
+    	$act = actividad::find($id);
     	return view('activ.show', compact('act'));
     }
 
     public function destroy($id){
 
-    	$act = actividades::find($id);
+    	$act = actividad::find($id);
     	$act->delete();
 
     	return back()->with('info', 'Actividad eliminada');

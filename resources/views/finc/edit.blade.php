@@ -4,11 +4,11 @@
 	<div class="col-sm-8">
 		<h5> 
 			Editar finca
-			<a href="{{ route('fincas.index') }}" class="btn btn-default pull-right">Listado</a>
+			<a href="{{ route('finca.index') }}" class="btn btn-default pull-right">Listado</a>
 		</h5>
 		@include('finc.fragment.error')
 		
-		{!! Form::model($finc, ['route' => ['fincas.update', $finc->id], 'method' => 'PUT']) !!}
+		{!! Form::model($finc, ['route' => ['finca', $finc->id], 'method' => 'PUT']) !!}
 			@include('finc.fragment.form')
 		{!! Form::close() !!}
 			

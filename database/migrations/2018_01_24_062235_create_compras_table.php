@@ -22,8 +22,8 @@ class CreateComprasTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('idFnca')->references('id')->on('fincas');
-            $table->foreign('idProv')->references('id')->on('proveedores');
+            $table->foreign('idFnca')->references('id')->on('finca');
+            $table->foreign('idProv')->references('id')->on('proveedor');
         });
     }
 
