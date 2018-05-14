@@ -12,7 +12,8 @@ class CreateFincasTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+       
         Schema::create('finca', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomfinca');
