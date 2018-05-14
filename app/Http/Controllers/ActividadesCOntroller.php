@@ -71,9 +71,9 @@ class ActividadesCOntroller extends Controller
 
     public function destroy($id){
 
-    	$act = actividad::find($id);
+    	$act = actividad::findOrFail($id);
     	$act->delete();
-
-    	return back()->with('info', 'Actividad eliminada');
+        
+    	return back()->with('info', 'El empleado fue eliminado');
     }
 }

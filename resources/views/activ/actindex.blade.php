@@ -24,17 +24,11 @@
 						<td>
 							<a href="{{ route('activities.show', $acti->id) }}" class="btn btn-link">Detalles</a>
 						</td>
-						<!--<td>
-							<a href="{{ route('activities.edit', $acti->id) }}" class="btn btn-link">editar</a>
-						</td>
 						<td>
-							<form action="{{ route('activities.destroy', $acti->id) }}" method="POST">
-								{{ csrf_field() }}
-								<input type="hidden" name="_method" value="DELETE">
-								<button class="btn btn-link">Borrar</button>
-							</form>
-					    </td>-->
+							<a href="" data-target="#modal-delete-{{$acti->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>
+					    </td>
 				</tr>
+				@include('activ.fragment.modal')
 				@endforeach
 			</tbody>
 		</table>
