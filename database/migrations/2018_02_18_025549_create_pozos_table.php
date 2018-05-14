@@ -13,7 +13,7 @@ class CreatePozosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pozo', function (Blueprint $table) {
+        Schema::create('pozos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idFiin')->unsigned();
             $table->string('pozo', 50);
@@ -25,7 +25,7 @@ class CreatePozosTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('idFiin')->references('id')->on('finca');
+            $table->foreign('idFiin')->references('id')->on('fincas');
         });
     }
 
@@ -36,6 +36,6 @@ class CreatePozosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pozo');
+        Schema::dropIfExists('pozos');
     }
 }

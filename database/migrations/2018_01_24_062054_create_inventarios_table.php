@@ -21,8 +21,8 @@ class CreateInventariosTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('idFinca')->references('id')->on('finca');
-            $table->foreign('idProd')->references('id')->on('producto');
+            $table->foreign('idFinca')->references('id')->on('fincas');
+            $table->foreign('idProd')->references('id')->on('productos');
         });
     }
 

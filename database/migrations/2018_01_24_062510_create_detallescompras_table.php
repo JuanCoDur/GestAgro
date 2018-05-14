@@ -25,7 +25,7 @@ class CreateDetallescomprasTable extends Migration
             $table->timestamps();
 
             $table->foreign('FolCpra')->references('folioCra')->on('compras');
-            $table->foreign('idFin')->references('id')->on('finca');
+            $table->foreign('idFin')->references('id')->on('fincas');
             $table->foreign('idPro')->references('idProd')->on('inventarios');
         });
     }

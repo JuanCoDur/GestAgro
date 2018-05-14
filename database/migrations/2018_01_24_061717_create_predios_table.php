@@ -13,7 +13,7 @@ class CreatePrediosTable extends Migration
      */
     public function up()
     {
-        Schema::create('predio', function (Blueprint $table) {
+        Schema::create('predios', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idFin')->unsigned();
             $table->string('nombrePredio', 30);
@@ -28,7 +28,7 @@ class CreatePrediosTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('idFin')->references('id')->on('finca');
+            $table->foreign('idFin')->references('id')->on('fincas');
         });
     }
 
@@ -39,6 +39,6 @@ class CreatePrediosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('predio');
+        Schema::dropIfExists('predios');
     }
 }

@@ -13,7 +13,7 @@ class CreateActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actividad', function (Blueprint $table) {
+        Schema::create('actividades', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idFiinca')->unsigned();
             $table->string('NomPredio', 25);
@@ -25,7 +25,7 @@ class CreateActividadesTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('idFiinca')->references('id')->on('finca');
+            $table->foreign('idFiinca')->references('id')->on('fincas');
         });
     }
 
@@ -36,6 +36,6 @@ class CreateActividadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actividad');
+        Schema::dropIfExists('actividades');
     }
 }

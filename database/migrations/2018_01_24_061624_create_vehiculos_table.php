@@ -13,7 +13,7 @@ class CreateVehiculosTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehiculo', function (Blueprint $table) {
+        Schema::create('vehiculos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idTipoV')->unsigned();
             $table->integer('idFinca')->unsigned();
@@ -28,9 +28,9 @@ class CreateVehiculosTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('idTipoV')->references('id')->on('tipsvehiculo');
-            $table->foreign('idFinca')->references('id')->on('finca');
-            $table->foreign('idmarc')->references('id')->on('marca');
+            $table->foreign('idTipoV')->references('id')->on('tipsvehiculos');
+            $table->foreign('idFinca')->references('id')->on('fincas');
+            $table->foreign('idmarc')->references('id')->on('marcas');
         });
     }
 

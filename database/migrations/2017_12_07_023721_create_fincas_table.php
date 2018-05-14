@@ -13,7 +13,7 @@ class CreateFincasTable extends Migration
      */
     public function up()
     {
-        Schema::create('finca', function (Blueprint $table) {
+        Schema::create('fincas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomfinca');
             $table->string('domfinca');
@@ -24,9 +24,9 @@ class CreateFincasTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('us_id')->references('id')->on('users');
-//                ->onDelete('cascade')
-//                ->onUpdate('cascade');
+            $table->foreign('us_id')->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -37,6 +37,6 @@ class CreateFincasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('finca');
+        Schema::dropIfExists('fincas');
     }
 }

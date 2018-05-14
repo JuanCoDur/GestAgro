@@ -13,7 +13,7 @@ class CreateEmpleadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('empleado', function (Blueprint $table) {
+        Schema::create('empleados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fin_id')->unsigned();
             $table->string('nomemp');
@@ -34,9 +34,9 @@ class CreateEmpleadosTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('fin_id')->references('id')->on('finca');
-//                ->onDelete('cascade')
-//                ->onUpdate('cascade');
+            $table->foreign('fin_id')->references('id')->on('fincas')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -47,6 +47,6 @@ class CreateEmpleadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleado');
+        Schema::dropIfExists('empleados');
     }
 }

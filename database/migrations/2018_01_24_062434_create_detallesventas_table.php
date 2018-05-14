@@ -25,7 +25,7 @@ class CreateDetallesventasTable extends Migration
             $table->timestamps();
 
             $table->foreign('FolVta')->references('folioVta')->on('ventas');
-            $table->foreign('idFincas')->references('id')->on('finca');
+            $table->foreign('idFincas')->references('id')->on('fincas');
             $table->foreign('idPto')->references('idProd')->on('inventarios');
         });
     }

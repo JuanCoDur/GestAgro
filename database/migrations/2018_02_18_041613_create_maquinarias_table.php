@@ -13,7 +13,7 @@ class CreateMaquinariasTable extends Migration
      */
     public function up()
     {
-        Schema::create('maquinaria', function (Blueprint $table) {
+        Schema::create('maquinarias', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idFiinc')->unsigned();
             $table->integer('idmarc')->unsigned();
@@ -29,8 +29,8 @@ class CreateMaquinariasTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('idFiinc')->references('id')->on('finca');
-            $table->foreign('idmarc')->references('id')->on('marca');
+            $table->foreign('idFiinc')->references('id')->on('fincas');
+            $table->foreign('idmarc')->references('id')->on('marcas');
         });
     }
 
@@ -41,6 +41,6 @@ class CreateMaquinariasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maquinaria');
+        Schema::dropIfExists('maquinarias');
     }
 }
