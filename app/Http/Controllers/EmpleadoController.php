@@ -84,9 +84,9 @@ class EmpleadoController extends Controller
     }
 
     public function show($id){
-
+         $fin =finca::all();
     	$emplea = empleado::find($id);
-    	return view('empleado.show', compact('emplea'));
+    	return view('empleado.show', compact('emplea','fin'));
     }
 
     public function destroy($id){

@@ -26,7 +26,16 @@
 			<a href="{{ route('empleado.index') }}" class="btn btn-info" role="button">Regresar</a>
 
 			<a href="{{ route('empleado.edit', $emplea->id) }}" class="btn btn-info">Editar</a>
-			
+			    <div class="form-group row">
+	                <label for="nomfinca" class="col-md-2 col-form-label">Finca a la cual pertenece</label>
+	                <select name="fin_id" id="fin_id" class="form-control">
+	                	<option value="">Finca donde labora</option>
+	                	@foreach($fin as $finca)
+	                		<option value="{{ $finca['id'] }}" >{{ $finca['nomfinca'] }}</option>
+	                	@endforeach
+	                </select>															
+                </div>
+
 				<div class="form-group row">
 					<label for="nomemp" class="col-md-2 col-form-label">Nombre</label>
     				<div class="col-sm-8">
@@ -205,6 +214,10 @@
                             	</span>
         	                @endif
                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submint">Guardar</button>
+                     <a class="btn btn-default btn-danger btn-close" href="{{ route('empleado.index') }}">Cancelar</a>
                 </div>
 			</div>
 		</div>
