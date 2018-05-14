@@ -61,5 +61,5 @@
                     
 <div class="form-group">
     <button class="btn btn-primary" type="submint">Guardar</button>
-    <button class="btn btn-danger" type="reset">Calcelar</button>
+     <a class="btn btn-default btn-danger btn-close" href="{{ route('users.index') }}">Cancelar</a>
 </div>

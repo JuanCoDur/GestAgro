@@ -13,7 +13,7 @@
 			<thead>
 				<tr>
 					<th>Nombre</th>
-					{{--<th>Edad</th>--}}
+					<!--{{--<th>Edad</th>--}}
 					{{--<th>Estadocivil</th>--}}
 					{{--<th>Dependientes-</th>--}}
 					{{--<th>Dependientes+</th>--}}
@@ -26,7 +26,7 @@
 					{{--<th>Sueldo</th>--}}
 					<th>Cargo</th>
 					{{--<th>Jefe</th>--}}
-					{{--<th>Subordinados</th>--}}
+					{{--<th>Subordinados</th>--}}-->
 
 					<th colspan="3">&nbsp;</th>
 				</tr>
@@ -38,7 +38,7 @@
 						<strong>{{ $empleado->nomemp }}</strong>
 					</td>	
 					<td>{{ $empleado->edademp }}</td>
-					{{--<td>{{ $empleado->edocivil }}</td>--}}
+					<!--{{--<td>{{ $empleado->edocivil }}</td>--}}
 					{{--<td>{{ $empleado->depmenor }}</td>--}}
 					{{--<td>{{ $empleado->depmayor }}</td>--}}
 					{{--<td>{{ $empleado->discapacidades }}</td>--}}
@@ -50,11 +50,11 @@
 					{{--<td>{{ $empleado->sueldonto }}</td>--}}
 					<td>{{ $empleado->cargo }}</td>
 					{{--<td>{{ $empleado->jefedirecto }}</td>--}}
-					{{--<td>{{ $empleado->subordinados }}</td>--}}
+					{{--<td>{{ $empleado->subordinados }}</td>--}}-->
 					<td>
 						<a href="{{ route('empleado.show', $empleado->id) }}" class="btn btn-info">Detalles</a>
 					</td>
-					{{--<td>--}}
+					<!--{{--<td>--}}
 						{{--<a href="{{ route('empleado.edit', $empleado->id) }}" class="btn btn-info">editar</a>--}}
 					{{--</td>--}}
 					{{--<td>--}}
@@ -63,7 +63,7 @@
 							{{--<input type="hidden" name="_method" value="DELETE">--}}
 							{{--<button class="btn btn-danger">Borrar</button>--}}
 						{{--</form>--}}
-					{{--</td>--}}
+					{{--</td>--}}-->
 				</tr>
 				@endforeach
 			</tbody>
