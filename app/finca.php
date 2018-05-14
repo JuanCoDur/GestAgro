@@ -10,7 +10,7 @@ class finca extends Model
         'nomfinca', 'domfinca', 'telfinca', 'ciudad', 'estado','us_id',
     ];
 
-    public function user(){
-        $this->belongsTo('App\User', 'us_id');
-    }
+//    public function user(){
+//        $this->belongsTo('App\User', 'us_id');
+//    }
 }

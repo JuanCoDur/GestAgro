@@ -25,7 +25,7 @@ class CreatePozosTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('idFiin')->references('id')->on('fincas');
+            $table->foreign('idFiin')->references('id')->on('finca');
         });
     }
 

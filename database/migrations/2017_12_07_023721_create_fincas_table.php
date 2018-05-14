@@ -24,9 +24,9 @@ class CreateFincasTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('us_id')->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreign('us_id')->references('id')->on('users');
+//                ->onDelete('cascade')
+//                ->onUpdate('cascade');
         });
     }
 

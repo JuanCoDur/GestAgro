@@ -34,9 +34,9 @@ class CreateEmpleadosTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('fin_id')->references('id')->on('fincas')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->foreign('fin_id')->references('id')->on('finca');
+//                ->onDelete('cascade')
+//                ->onUpdate('cascade');
         });
     }
 
