@@ -22,9 +22,9 @@
 							<strong>{{ $acti->actividadRealizada }}</strong>
 						</td>									
 						<td>
-							<a href="{{ route('activities.show', $acti->id) }}" class="btn btn-link">ver</a>
+							<a href="{{ route('activities.show', $acti->id) }}" class="btn btn-link">Detalles</a>
 						</td>
-						<td>
+						<!--<td>
 							<a href="{{ route('activities.edit', $acti->id) }}" class="btn btn-link">editar</a>
 						</td>
 						<td>
@@ -33,7 +33,7 @@
 								<input type="hidden" name="_method" value="DELETE">
 								<button class="btn btn-link">Borrar</button>
 							</form>
-					</td>
+					    </td>-->
 				</tr>
 				@endforeach
 			</tbody>

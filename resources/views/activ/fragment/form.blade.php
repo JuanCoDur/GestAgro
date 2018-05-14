@@ -1,18 +1,25 @@
 <div class="form-group">
-	{!! Form::label('idFiinca','Finca a la que pertenece') !!}
-	{!! Form::number('idFiinca', null, ['class' => 'form-control']) !!}
+    <label for="nomfinca" class="col-md-2 col-form-label">Finca a la cual pertenece</label>
+    
+        <select name="idFiinca" id="idFiinca"  class="form-control">
+        	<option value="">Finca donde labora</option>
+        	@foreach($fin as $finca)
+        		<option value="{{ $finca['id'] }}" >{{ $finca['nomfinca'] }}</option>
+        	@endforeach
+        </select>	
+													
 </div>
 <div class="form-group">
 	{!! Form::label('NomPredio','Nombre del predio') !!}
-	{!! Form::text('NomPRedio', null, ['class' => 'form-control']) !!}
+	{!! Form::text('NomPredio', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
 	{!! Form::label('noLote','No. Lote') !!}
 	{!! Form::number('noLote', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-	{!! Form::label('actividadesRealizadas','Actividades Realizadas') !!}
-	{!! Form::text('actividadesRealizadas', null, ['class' => 'form-control']) !!}
+	{!! Form::label('actividadRealizada','Actividades Realizadas') !!}
+	{!! Form::text('actividadRealizada', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
 	{!! Form::label('empleadosInvolucrados','Empleados Involucrados') !!}
@@ -20,7 +27,7 @@
 </div>
 <div class="form-group">
 	{!! Form::label('tiempoEmpleado','Horas Empleadas') !!}
-	{!! Form::text('tiempoEMpleado', null, ['class' => 'form-control']) !!}
+	{!! Form::text('tiempoEmpleado', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
 	{!! Form::label('vehInvolucrados','Vehiculos Involucrados') !!}

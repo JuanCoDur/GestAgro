@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\actividad;
+use App\finca;
 use App\Http\Requests\ActividadesRequest;
 use Illuminate\Support\Facades\View;
-
 use Illuminate\Http\Request;
 
 class ActividadesCOntroller extends Controller
@@ -20,8 +20,9 @@ class ActividadesCOntroller extends Controller
     }
 
 	public function create(){
+        $fin =finca::all();
     	$act = actividad::all();
-    	return view('activ.create', compact('act'));
+    	return view('activ.create', compact('act','fin'));
     }
 
     public function store(ActividadesRequest $request){
@@ -34,16 +35,16 @@ class ActividadesCOntroller extends Controller
     	$act->empleadosInvolucrados   = $request->empleadosInvolucrados ;
     	$act->tiempoEmpleado    = $request->tiempoEmpleado ;
     	$act->vehInvolucrados = $request->vehInvolucrados;
-    	$finc->save();
+    	$act->save();
 
     	return redirect()->route('activities.index')
     					 ->with('info', 'Actividad agregada correctamente');
     }
 
 	public function edit($id){
-    	
+    	$fin =finca::all();
     	$act  = actividad::find($id);
-    	return view('activ.edit', compact('act'));
+    	return view('activ.edit', compact('act','fin'));
     }
 
     public function update(ActividadesRequest $request, $id){
@@ -56,16 +57,16 @@ class ActividadesCOntroller extends Controller
     	$act->empleadosInvolucrados   = $request->empleadosInvolucrados ;
     	$act->tiempoEmpleado    = $request->tiempoEmpleado ;
     	$act->vehInvolucrados = $request->vehInvolucrados;
-    	$finc->save();
+    	$act->save();
 
     	return redirect()->route('activities.index')
     					 ->with('info', 'Actividad actualizada');
     }
 
     public function show($id){
-
+        $fin =finca::all();
     	$act = actividad::find($id);
-    	return view('activ.show', compact('act'));
+    	return view('activ.show', compact('act','fin'));
     }
 
     public function destroy($id){
