@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\clasificaciones;
+use App\clasificacion;
 use App\Http\Requests\ClasRequest;
 use Illuminate\Support\Facades\View;
 
 class ClasController extends Controller
 {
      public function index(){
-    	$class=clasificaciones::orderBy('id','DESC')->paginate('7');
+    	$class=clasificacion::orderBy('id','DESC')->paginate('7');
     	return view('clasif.clasindex', compact('class'));
     }
 
@@ -21,7 +21,7 @@ class ClasController extends Controller
 
     public function store(ClasRequest $request){
 
-    	$class = new clasificaciones;
+    	$class = new clasificacion;
     	
     	$class->nomClasif = $request->nomClasif;
     	$class->save();
@@ -32,7 +32,7 @@ class ClasController extends Controller
 
     public function update(ClasRequest $request, $id){
 
-    	$class= clasificaciones::find($id);
+    	$class= clasificacion::find($id);
 
     	$class->nomClasif = $request->nomClasif;
     	$class->save();
@@ -42,17 +42,17 @@ class ClasController extends Controller
 
  	public function edit($id){
     	
-    	$class=clasificaciones::find($id);
+    	$class=clasificacion::find($id);
     	return view('clasif.edit', compact('class'));
     }
 
     public function show($id){
-    	$class=clasificaciones::find($id);
+    	$class=clasificacion::find($id);
     	return view('clasif.show', compact('class'));
     }
 
     public function destroy($id){
-    	$class=clasificaciones::find($id);
+    	$class=clasificacion::find($id);
     	$class->delete();
 
     	return back()->with('info', 'Campo eliminado correctamente');

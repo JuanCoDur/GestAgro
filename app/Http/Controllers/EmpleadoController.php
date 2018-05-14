@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\empleados;
-use App\fincas;
+use App\empleado;
+use App\finca;
 use App\Http\Requests\EmpleadoRequest;
 use Illuminate\Support\Facades\View;
 
@@ -13,19 +13,19 @@ class EmpleadoController extends Controller
 
 	 public function index(){
 
-    	$emp= empleados::orderBy('id','DESC')->paginate();
+    	$emp= empleado::orderBy('id','DESC')->paginate();
     	return view('empleado.empindex', compact('emp'));
     }
 
     public function create(){
-        $fin =fincas::all();
+        $fin =finca::all();
     	return view('empleado.create', compact('fin'));
     }
 
     public function store(EmpleadoRequest $request){
 
     	
-    	$emplea = new empleados;
+    	$emplea = new empleado;
     	$emplea ->fin_id = $request->fin_id;
     	$emplea ->nomemp = $request->nomemp;
     	$emplea ->edademp = $request->edademp;
@@ -45,13 +45,13 @@ class EmpleadoController extends Controller
 
     	$emplea->save();
 
-    	return redirect()->route('empleados.index')
-    					 ->with('info', 'El producto fue guardado');
+    	return redirect()->route('empleado.index')
+    					 ->with('info', 'El empleado fue guardado');
     }
 
     public function update(EmpleadoRequest $request, $id){
 
-    	$emplea = empleados::find($id);
+    	$emplea = empleado::find($id);
 
     	$emplea ->nomemp = $request->nomemp;
     	$emplea ->edademp = $request->edademp;
@@ -71,28 +71,28 @@ class EmpleadoController extends Controller
 
     	$emplea->save();
 
-    	return redirect()->route('empleados.index')
-    					 ->with('info', 'El producto fue actualizado');
+    	return redirect()->route('empleado.index')
+    					 ->with('info', 'El empleado fue actualizado');
     }
 
     public function edit($id){
-        $fin =fincas::all();
-    	$emplea = empleados::find($id);
+        $fin =finca::all();
+    	$emplea = empleado::find($id);
     	return view('empleado.edit', compact('emplea','fin'));
     }
 
     public function show($id){
 
-    	$emplea = empleados::find($id);
+    	$emplea = empleado::find($id);
     	return view('empleado.show', compact('emplea'));
     }
 
     public function destroy($id){
 
-    	$emplea = empleados::find($id);
+    	$emplea = empleado::find($id);
     	$emplea->delete();
 
-    	return back()->with('info', 'El producto fue eliminado');
+    	return back()->with('info', 'El empleado fue eliminado');
 
     }
 

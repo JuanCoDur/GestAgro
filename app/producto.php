@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class marcas extends Model
+class producto extends Model
 {
     protected $fillable = [
-        'nomMarca',
+        'idClasif','nomProducto','descripcion','costo','preciovta',
     ];
 }

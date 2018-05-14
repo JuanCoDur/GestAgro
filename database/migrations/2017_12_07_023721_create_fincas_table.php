@@ -13,7 +13,7 @@ class CreateFincasTable extends Migration
      */
     public function up()
     {
-        Schema::create('fincas', function (Blueprint $table) {
+        Schema::create('finca', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nomfinca');
             $table->string('domfinca');
@@ -37,6 +37,6 @@ class CreateFincasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fincas');
+        Schema::dropIfExists('finca');
     }
 }

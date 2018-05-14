@@ -3,28 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MaquinariaRequest;
-use App\maquinarias;
-use App\fincas;
-use App\marcas;
+use App\maquinaria;
+use App\finca;
+use App\marca;
 use App\Http\Requests\VehiculosRequest;
 use Illuminate\Http\Request;
 
 class MaquinariaController extends Controller
 {
     public function index(){
-        $maq=maquinarias::orderBy('id','DESC')->paginate();
+        $maq=maquinaria::orderBy('id','DESC')->paginate();
         return view('maquinaria.maqindex', compact('maq'));
     }
 
     public function create(){
-        $fin = fincas::all();
-        $marc = marcas::all();
+        $fin = finca::all();
+        $marc = marca::all();
         return view('maquinaria.create', compact('fin','marc'));
     }
 
     public function store(MaquinariaRequest $request){
 
-        $maq = new maquinarias;
+        $maq = new maquinaria;
         $maq->idFiinc = $request->idFiinc; //primer valor es la caja de texto, segundo es la BD
         $maq->idmarc = $request->idmarc;
         $maq->Combustible = $request->Combustible;
@@ -43,7 +43,7 @@ class MaquinariaController extends Controller
 
     public function update(MaquinariaRequest $request, $id){
 
-        $maq=maquinarias::find($id);
+        $maq=maquinaria::find($id);
         $maq->idFiinc = $request->idFiinc; //primer valor es la caja de texto, segundo es la BD
         $maq->idmarc = $request->idmarc;
         $maq->Combustible = $request->Combustible;
@@ -60,14 +60,14 @@ class MaquinariaController extends Controller
     }
 
     public function edit($id){
-        $fin = fincas::all();
-        $marc = marcas::all();
-        $maq = maquinarias::find($id);
+        $fin = finca::all();
+        $marc = marca::all();
+        $maq = maquinaria::find($id);
         return view('maquinaria.edit', compact('fin','marc', 'maq'));
     }
 
     public function show($id){
-        $maq=maquinarias::find($id);
+        $maq=maquinaria::find($id);
         return view('maquinaria.show', compact('maq'));
     }
 

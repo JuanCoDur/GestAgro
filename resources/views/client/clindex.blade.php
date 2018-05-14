@@ -6,7 +6,7 @@
 			Lista de clientes
 			<a href="{{ route('clients.create') }}" class="btn btn-primary pull-right">Nuevo</a>
 		</h2>
-		@include('client.fragment.info')
+		{{--@include('client.fragment.info')--}}
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr>

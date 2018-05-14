@@ -23,11 +23,11 @@ Route::get('/home', 'PrincipalController@index')->name('home');//S EL HOME DE LA
 
 Route::resource('users','UsersController');
 
-Route::resource('fincas','FincasController');
+Route::resource('finca','FincasController');
 
-Route::resource('empleados','EmpleadoController');//contiene todas las rutas de crod
+Route::resource('empleado','EmpleadoController');//contiene todas las rutas de crod
 
-Route::resource('marcas','MarcaController');
+Route::resource('marca','MarcaController');
 
 Route::resource('tipveh','TipvehController');
 

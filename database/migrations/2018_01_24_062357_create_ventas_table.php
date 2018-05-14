@@ -22,8 +22,8 @@ class CreateVentasTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('idFnca')->references('id')->on('fincas');
-            $table->foreign('idCte')->references('id')->on('clientes');
+            $table->foreign('idFnca')->references('id')->on('finca');
+            $table->foreign('idCte')->references('id')->on('cliente');
         });
     }
 

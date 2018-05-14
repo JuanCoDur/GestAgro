@@ -13,7 +13,7 @@ class CreatePozosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pozos', function (Blueprint $table) {
+        Schema::create('pozo', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idFiin')->unsigned();
             $table->string('pozo', 50);
@@ -36,6 +36,6 @@ class CreatePozosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pozos');
+        Schema::dropIfExists('pozo');
     }
 }

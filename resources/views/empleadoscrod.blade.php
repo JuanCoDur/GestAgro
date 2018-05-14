@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="links">
-		<a href="{{ route('empleados.index') }}">Lista de empleados</a>
+		<a href="{{ route('empleado') }}">Lista de empleados</a>
 		
 	</div>
 </body>

@@ -13,7 +13,7 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('producto', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idClasif')->unsigned();
             $table->string('nomProducto');
@@ -23,7 +23,7 @@ class CreateProductosTable extends Migration
 
             $table->timestamps();
 
-            $table->foreign('idClasif')->references('id')->on('clasificaciones');
+            $table->foreign('idClasif')->references('id')->on('clasificacion');
         });
     }
 
@@ -34,6 +34,6 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productos');
+        Schema::dropIfExists('producto');
     }
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="links">
-		<a href="{{ route('marcas.index') }}">Lista de marcas</a>
+		<a href="{{ route('marca') }}">Lista de marcas</a>
 		
 	</div>
 </body>

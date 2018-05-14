@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\tipsvehiculos;
+use App\tipsvehiculo;
 use App\Http\Requests\TipvehRequest;
 use Illuminate\Support\Facades\View;
 
 class TipvehController extends Controller
 {
     public function index(){
-    	$tp=tipsvehiculos::orderBy('id','DESC')->paginate();
+    	$tp=tipsvehiculo::orderBy('id','DESC')->paginate();
     	return view('tipvehlo.tpindex', compact('tp'));
     }
 
@@ -21,7 +21,7 @@ class TipvehController extends Controller
 
     public function store(TipvehRequest $request){
 
-    	$tp = new tipsvehiculos;
+    	$tp = new tipsvehiculo;
     	$tp->idmarc = $request->idmarc;
     	$tp->nomTipo = $request->nomTipo;
     	$tp->save();
@@ -32,7 +32,7 @@ class TipvehController extends Controller
 
     public function update(TipvehRequest $request, $id){
 
-    	$tp=tipsvehiculos::find($id);
+    	$tp=tipsvehiculo::find($id);
     	$tp->idmarc = $request->idmarc;	
     	$tp->nomTipo = $request->nomTipo;
     	$tp->save();
@@ -42,17 +42,17 @@ class TipvehController extends Controller
 
  	public function edit($id){
     	
-    	$tp=tipsvehiculos::find($id);
+    	$tp=tipsvehiculo::find($id);
     	return view('tipvehlo.edit', compact('tp'));
     }
 
     public function show($id){
-    	$tp=tipsvehiculos::find($id);
+    	$tp=tipsvehiculo::find($id);
     	return view('tipvehlo.show', compact('tp'));
     }
 
     public function destroy($id){
-    	$tp=tipsvehiculos::find($id);
+    	$tp=tipsvehiculo::find($id);
     	$tp->delete();
 
     	return back()->with('info', 'Eliminado correctamente');

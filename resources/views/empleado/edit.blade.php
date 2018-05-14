@@ -5,11 +5,11 @@
 	<div class="col-sm-8">
 		<h5>
 			Editar Empleado
-			<a href="{{ route('empleados.index') }}"class="btn btn-default pull-right">Listado</a>
+			<a href="{{ route('empleado.index') }}"class="btn btn-default pull-right">Listado</a>
 		</h5>
 		@include('empleado.fragment.error')
 
-		{!! Form::model($emplea, ['route' => ['empleados.update', $emplea->id], 'method' => 'PUT']) !!}
+		{!! Form::model($emplea, ['route' => ['empleado.update', $emplea->id], 'method' => 'PUT']) !!}
 			@include('empleado.fragment.form')
 		{!! Form::close() !!}
 	</div>

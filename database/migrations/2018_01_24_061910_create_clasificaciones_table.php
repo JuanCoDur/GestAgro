@@ -13,7 +13,7 @@ class CreateClasificacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clasificaciones', function (Blueprint $table) {
+        Schema::create('clasificacion', function (Blueprint $table) {
             $table->increments('id');
 
             $table->string('nomClasif');
@@ -29,6 +29,6 @@ class CreateClasificacionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clasificaciones');
+        Schema::dropIfExists('clasificacion');
     }
 }

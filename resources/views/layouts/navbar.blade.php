@@ -44,7 +44,7 @@
                 <li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Finca <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-1" class="collapse">
-                        <li><a href="{{ route('fincas.index') }}"><i class="fa fa-angle-double-right"></i>Listado y edición</a></li>
+                        <li><a href="{{ route('finca.index') }}"><i class="fa fa-angle-double-right"></i>Listado y edición</a></li>
                         <li><a href="{{ route('predio.index') }}"><i class="fa fa-angle-double-right"></i>Predio</a></li>
                         <li><a href="{{ route('pozo.index') }}"><i class="fa fa-angle-double-right"></i>Pozos</a></li>
                     </ul>
@@ -52,7 +52,7 @@
                 <li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  Recursos humanos <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-2" class="collapse">
-                        <li><a href="{{ route('empleados.index') }}"><i class="fa fa-angle-double-right"></i> Empleados</a></li>
+                        <li><a href="{{ route('empleado.index') }}"><i class="fa fa-angle-double-right"></i> Empleados</a></li>
         
                     </ul>
                 </li>
@@ -62,7 +62,7 @@
                         <li><a href="{{ route('maqui.index') }}"><i class="fa fa-angle-double-right"></i> Maquinaria</a></li>
                         <li><a href="{{ route('vehic.index') }}"><i class="fa fa-angle-double-right"></i> Vehiculos</a></li>
                         <li><a href="{{ route('tipveh.index') }}"><i class="fa fa-angle-double-right"></i> Tipo Vehiculos</a></li>
-                        <li><a href="{{ route('marcas.index') }}"><i class="fa fa-angle-double-right"></i> Marcas</a></li>
+                        <li><a href="{{ route('marca.index') }}"><i class="fa fa-angle-double-right"></i> Marcas</a></li>
                     </ul>
                 </li>
                 <li>
@@ -81,7 +81,7 @@
                     <a href="{{ route('prov.index') }}"><i class="fa fa-fw fa-star"></i> Proveedores</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-user-plus"></i>Actividades</a>
+                    <a href="{{ route('activities.index') }}"><i class="fa fa-fw fa-user-plus"></i>Actividades</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-paper-plane-o"></i> menu3</a>

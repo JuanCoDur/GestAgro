@@ -8,7 +8,7 @@
 			<a href="{{ route('clients.index') }}"class="btn btn-default pull-right">Listado</a>
 		</h2>
 
-		@include('client.fragment.error')
+		{{--@include('client.fragment.error')--}}
 
 		{!! Form::open(['route' => 'clients.store']) !!}
 			@include('client.fragment.form')

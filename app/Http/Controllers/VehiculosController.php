@@ -3,30 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\vehiculos;
-use App\fincas;
-use App\marcas;
-use App\tipsvehiculos;
+use App\vehiculo;
+use App\finca;
+use App\marca;
+use App\tipsvehiculo;
 use App\Http\Requests\VehiculosRequest;
 use Illuminate\Support\Facades\View;
 
 class VehiculosController extends Controller
 {
     public function index(){
-    	$veh=vehiculos::orderBy('id','DESC')->paginate();
+    	$veh=vehiculo::orderBy('id','DESC')->paginate();
     	return view('vehi.vehindex', compact('veh'));
     }
 
  	 public function create(){
-    	$fin = fincas::all();
-        $marc = marcas::all();
-        $tipv = tipsvehiculos::all();
+    	$fin = finca::all();
+        $marc = marca::all();
+        $tipv = tipsvehiculo::all();
     	return view('vehi.create', compact('fin','marc','tipv'));
     }
 
     public function store(VehiculosRequest $request){
 
-    	$veh = new vehiculos;
+    	$veh = new vehiculo;
     	$veh->idTipoV = $request->idTipoV;
     	$veh->idFinca = $request->idFinca;
         $veh->idmarc = $request->idmarc;
@@ -46,7 +46,7 @@ class VehiculosController extends Controller
 
     public function update(VehiculosRequest $request, $id){
 
-    	$veh=vehiculos::find($id);
+    	$veh=vehiculo::find($id);
     	$veh->idTipoV = $request->idTipoV;
     	$veh->idFinca = $request->idFinca;
         $veh->idmarc = $request->idmarc;
@@ -64,20 +64,20 @@ class VehiculosController extends Controller
     }
 
  	public function edit($id){
-    	$fin = fincas::all();
-        $marc = marcas::all();
-        $tipv = tipsvehiculos::all();
-    	$veh=vehiculos::find($id);
+    	$fin = finca::all();
+        $marc = marca::all();
+        $tipv = tipsvehiculo::all();
+    	$veh=vehiculo::find($id);
     	return view('vehi.edit', compact('veh','fin','marc','tipv'));
     }
 
     public function show($id){
-    	$veh=vehiculos::find($id);
+    	$veh=vehiculo::find($id);
     	return view('vehi.show', compact('veh'));
     }
 
     public function destroy($id){
-    	$veh=vehiculos::find($id);
+    	$veh=vehiculo::find($id);
     	$veh->delete();
 
     	return back()->with('info', 'Eliminado correctamente');

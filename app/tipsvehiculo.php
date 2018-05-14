@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class clasificaciones extends Model
+class tipsvehiculo extends Model
 {
     protected $fillable = [
-        'nomClasif',
+        'idmarc','nomTipo',
     ];
 }

@@ -10,7 +10,7 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('nomemp','Nombre del empleado') !!}
+	{!! Form::label('nomemp','empleado') !!}
 	{!! Form::text('nomemp', null, ['class' => 'form-control']) !!}
 </div>
 
@@ -75,7 +75,7 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('jefedirecto','Jefe directo del empleado') !!}
+	{!! Form::label('jefedirecto','empleados') !!}
 	{!! Form::text('jefedirecto', null, ['class' => 'form-control']) !!}
 </div>
 

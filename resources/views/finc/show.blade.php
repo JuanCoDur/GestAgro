@@ -4,7 +4,7 @@
 	<div class="col-sm-8">
 		<h5> 
 			{{ $finc->nomfinca }}
-			<a href="{{ route('fincas.edit', $finc->id) }}" class="btn btn-default pull-right">Editar</a>
+			<a href="{{ route('finca.edit', $finc->id) }}" class="btn btn-default pull-right">Editar</a>
 		</h5>
 		<p>
 			{{ $finc->domfinca }}
