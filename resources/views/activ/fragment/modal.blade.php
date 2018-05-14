@@ -9,7 +9,7 @@
 				<h4 class="modal-title">Eliminar actividad</h4>
 			</div>
 			<div class="modal-body">
-				<p color="#cc0000">Confirme si decea Eliminar la actividad</p>
+				<p color="#fff">Confirme si decea Eliminar la actividad</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

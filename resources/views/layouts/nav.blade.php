@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!--<link rel="stylesheet" href="{{asset('css/icon/css/fontello.css')}}">-->
+  <!--<link rel="stylesheet" href="{{asset('css/icon/css/fontello.css')}}">
   <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
@@ -37,4 +37,4 @@
   <script src="js/JQuery-2.1.4.min.js" ></script>
   <script src="js/main.js"></script> 
 </body>
-</html>
+</html>-->

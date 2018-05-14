@@ -1,4 +1,4 @@
-*{
+/**{
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing:border-box;
@@ -125,6 +125,6 @@ header #tres{
 .menu ul li{
 	display:list-item;
 	background: rgba(0,0,5,113,722);
-}
+}*/
 
 
