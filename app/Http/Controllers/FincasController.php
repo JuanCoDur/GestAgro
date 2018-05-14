@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\fincas;
+use App\finca;
 use App\User;
 use App\Http\Requests\FincasRequest;
 use Illuminate\Support\Facades\View;
@@ -66,7 +66,6 @@ class FincasController extends Controller
     					 ->with('info', 'El producto fue actualizado');
     }
 
-    	$finc = fincas::find($id);
 
     public function show($id){
 

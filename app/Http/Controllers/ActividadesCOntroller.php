@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\actividades;
 use App\actividad;
 use App\Http\Requests\ActividadesRequest;
 use Illuminate\Support\Facades\View;
