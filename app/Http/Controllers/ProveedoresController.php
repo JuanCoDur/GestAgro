@@ -66,6 +66,6 @@ class ProveedoresController extends Controller
     	$prove=proveedor::find($id);
     	$prove->delete();
 
-    	return back()->with('info', 'Campo eliminado correctamente');
+    	return back()->with('info', 'Eliminado con exito');
     }
 }

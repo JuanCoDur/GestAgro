@@ -24,7 +24,6 @@ class TipvehRequest extends FormRequest
     public function rules()
     {
         return [
-            'idmarc'    => 'required',
             'nomTipo'    => 'required'
         ];
     }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\producto;
 use App\clasificacion;
-
 use App\Http\Requests\ProductosRequest;
 use Illuminate\Support\Facades\View;
 
@@ -20,8 +19,9 @@ class ProductosController extends Controller
     }
 
  	 public function create(){
-    	$class = clasificacion::all();
-    	return view('produc.create', compact('class'));
+    	 $class =clasificacion::all();
+        $prodd = producto::all();
+        return view('product.create', compact('class','prodd'));
     }
 
     public function store(ProductosRequest $request){
@@ -60,14 +60,15 @@ class ProductosController extends Controller
     }
 
     public function show($id){
+        $class = clasificacion::all();
     	$prodd=producto::find($id);
-    	return view('produc.show', compact('prodd'));
+    	return view('produc.show', compact('prodd','class'));
     }
 
     public function destroy($id){
-    	$prodd=producto::find($id);
-    	$prodd->delete();
-
-    	return back()->with('info', 'Campo eliminado correctamente');
+    	$prodd = actividad::findOrFail($id);
+        $prodd->delete();
+        
+        return back()->with('info', 'Eliminado con exito');
     }
 }

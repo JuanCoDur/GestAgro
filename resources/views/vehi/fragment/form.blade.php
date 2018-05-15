@@ -30,13 +30,8 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('Marca','Nombre de la marca') !!}
-	{!! Form::text('Marca', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
 	{!! Form::label('Combustible','Tipo de combustible que usa') !!}
-	{!! Form::text('Combustible', null, ['class' => 'form-control']) !!}
+	{!! Form::text('Combustible', null, ['class' => 'form-control','maxlenght'=>'8']) !!}
 </div>
 
 <div class="form-group">
@@ -50,8 +45,8 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('Adepreciacion','Depreciacion') !!}
-	{!! Form::text('Adepreciacion', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::label('Adepreciacion','Año de depreciacion') !!}
+	{!! Form::number('Adepreciacion', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">

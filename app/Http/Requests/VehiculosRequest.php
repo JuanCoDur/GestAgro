@@ -27,7 +27,6 @@ class VehiculosRequest extends FormRequest
             'idTipoV'    => 'required',
             'idFinca'    => 'required',
             'idmarc'     => 'required',
-            'Marca'      => 'required',
             'Combustible'=> 'required',
             'Rendimiento'=> 'required',
             'ModeloVeh'  => 'required',

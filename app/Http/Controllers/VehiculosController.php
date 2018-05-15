@@ -33,7 +33,7 @@ class VehiculosController extends Controller
     	$veh->idTipoV = $request->idTipoV;
     	$veh->idFinca = $request->idFinca;
         $veh->idmarc = $request->idmarc;
-    	$veh->Marca = $request->Marca;
+   
     	$veh->Combustible = $request->Combustible;
     	$veh->Rendimiento = $request->Rendimiento;
     	$veh->ModeloVeh = $request->ModeloVeh;
@@ -53,7 +53,7 @@ class VehiculosController extends Controller
     	$veh->idTipoV = $request->idTipoV;
     	$veh->idFinca = $request->idFinca;
         $veh->idmarc = $request->idmarc;
-    	$veh->Marca = $request->Marca;
+    	
     	$veh->Combustible = $request->Combustible;
     	$veh->Rendimiento = $request->Rendimiento;
     	$veh->ModeloVeh = $request->ModeloVeh;
@@ -75,8 +75,11 @@ class VehiculosController extends Controller
     }
 
     public function show($id){
+        $fin = finca::all();
+        $marc = marca::all();
+        $tipv = tipsvehiculo::all();
     	$veh=vehiculo::find($id);
-    	return view('vehi.show', compact('veh'));
+    	return view('vehi.show', compact('veh','fin','marc','tipv'));
     }
 
     public function destroy($id){

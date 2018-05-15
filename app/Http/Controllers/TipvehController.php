@@ -25,7 +25,6 @@ class TipvehController extends Controller
     public function store(TipvehRequest $request){
 
     	$tp = new tipsvehiculo;
-    	$tp->idmarc = $request->idmarc;
     	$tp->nomTipo = $request->nomTipo;
     	$tp->save();
 
@@ -36,7 +35,6 @@ class TipvehController extends Controller
     public function update(TipvehRequest $request, $id){
 
     	$tp=tipsvehiculo::find($id);
-    	$tp->idmarc = $request->idmarc;	
     	$tp->nomTipo = $request->nomTipo;
     	$tp->save();
     	return redirect()->route('tipveh.index')
@@ -55,7 +53,7 @@ class TipvehController extends Controller
     }
 
     public function destroy($id){
-    	$tp=tipsvehiculo::find($id);
+    	$tp=tipsvehiculo::findOrFail($id);
     	$tp->delete();
 
     	return back()->with('info', 'Eliminado correctamente');
