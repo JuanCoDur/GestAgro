@@ -22,11 +22,11 @@
 							<strong>{{ $claso->nomClasif }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('clasifi.show', $claso->id) }}" class="btn btn-info">ver</a>
+							<a href="{{ route('clasifi.show', $claso->id) }}" class="btn btn-info">Detalles</a>
 						</td>
-						<td>
+						<!--<td>
 							<a href="{{ route('clasifi.edit', $claso->id) }}" class="btn btn-info">editar</a>
-						</td>
+						</td>-->
 						<td>
 							<form action="{{ route('clasifi.destroy', $claso->id) }}" method="POST">
 								{{ csrf_field() }}

@@ -6,13 +6,13 @@
 	    	<h2>
 	    		{{ $act->actividadRealizada }}
 	    	</h2>
-			@include('activ.fragment.error')
+			@include('client.fragment.error')
 			{!! Form::model($act, ['route' => ['activities.update', $act->id], 'method'=>'PUT']) !!}
 
 			    <div class="form-group">
                	    	<input type="button" class="btn btn-primary" id="activ" value="Editar">
                     	<button class="btn btn-primary pull-right" type="submint">Guardar</button>
-                    	<a class="btn btn-default btn-danger btn-close" href="{{ route('activities.index') }}">Cancelar</a>
+                    	<a class="btn btn-default btn-danger btn-close" href="{{ route('finca.index') }}">Cancelar</a>
                 </div>
 
 				<div class="form-group row">
@@ -89,7 +89,7 @@
 
                 <div class="form-group row">
                 	<label for="vehInvolucrados" class="col-md-2 col-form-label">Vehiculos Involucrados</label>
-               <div class="col-sm-8">
+                    <div class="col-sm-8">
                 		<input id="vehInvolucrados" type="text" class="form-control" name="vehInvolucrados"  placeholder="Vehiculos Involucrados" value="{{ $act->vehInvolucrados }}" required autofocus>
                         	@if ($errors->has('vehInvolucrados'))
                             	<span class="help-block">

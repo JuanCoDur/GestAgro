@@ -11,7 +11,7 @@
 	<div class:"container">
 		<div clas="row">
 			<div class="col-xs-12">
-				<h1 class="page-header text-center"> Crud Clasificaciones</h1>
+				<h1 class="page-header text-center">Clasificaciones</h1>
 			</div>
 
 			@yield('content')

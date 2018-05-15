@@ -10,7 +10,6 @@
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
-					<th width="20xp">ID</th>
 					<th>Nombre de la marca</th>
 					<th colspan="3">&nbsp;</th>
 				</tr>
@@ -18,26 +17,17 @@
 			<tbody>
 				@foreach($marc as $m)
 					<tr>
-						<td>{{ $m->id }}</td>
 						<td>
 							<strong>{{ $m->nomMarca }}</strong>
 						</td>
-					
-				
 						<td>
-							<a href="{{ route('marca.show', $m->id) }}" class="btn btn-link">ver</a>
+							<a href="{{ route('marca.show', $m->id) }}" class="btn btn-primary">Detalles</a>
 						</td>
 						<td>
-							<a href="{{ route('marca.edit', $m->id) }}" class="btn btn-link">editar</a>
-						</td>
-						<td>
-							<form action="{{ route('marca.destroy', $m->id) }}" method="POST">
-								{{ csrf_field() }}
-								<input type="hidden" name="_method" value="DELETE">
-								<button class="btn btn-link">Borrar</button>
-							</form>
-					</td>
-				</tr>
+							<a href="" data-target="#modal-delete-{{$m->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>
+					    </td>
+					</tr>
+					@include('marca.fragment.modal')
 				@endforeach
 			</tbody>
 		</table>

@@ -16,27 +16,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($finc as $finca)
+				@foreach($finc as $fi)
 				<tr>
 					<td>
-						<strong>{{ $finca->nomfinca }}</strong>
-						{{ $finca->domfinca }}
-						{{ $finca->ciudad }}
-						{{ $finca->estado }}
+						<strong>{{ $fi->nomfinca }}</strong>
 					</td>
-					<td>{{ $finca->telfinca }}</td>
+					<td>{{ $fi->telfinca }}</td>
 					<td>
-						<a href="{{ route('finca.index', $finca->id) }}" class=" btn btn-link">ver</a>
-					</td>
-					<td>
-						<a href="{{ route('finca.edit', $finca->id) }}" class=" btn btn-link">editar</a>
-					</td>
-					<td>
-						<form action="{{ route('finca.destroy', $finca->id) }}" method="POST">
-							{{ csrf_field() }}
-							<input type="hidden" name="_method" value="DELETE">
-							<button class=" btn btn-link">borrar</button>
-						</form>
+						<a href="{{ route('finca.show', $fi->id) }}" class="btn btn-primary">Detalles</a>
 					</td>
 				</tr>
 				@endforeach

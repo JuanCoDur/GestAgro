@@ -10,50 +10,27 @@
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr>
-					
-					<th width="20xp">Clasif</th>
 					<th>Nombre del producto</th>
-					<th>Descripcion del producto</th>
-					<th>costo</th>
-					<th>Precio de venta</th>
-					<th colspan="3">&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach($prodd as $productto)
 					<tr>
-						
-						<td>
-							{{ $productto->idClasif }}
-						</td>
 						<td>
 							<strong>{{ $productto->nomProducto }}</strong>
 						</td>
-						<td>{{ $productto->descripcion }}</td>
-						<td>{{ $productto->costo }}</td>
-						<td>{{ $productto->preciovta }}</td>
-				
 						<td>
 							<a href="{{ route('prod.show', $productto->id) }}" class="btn btn-link">ver</a>
 						</td>
 						<td>
-							<a href="{{ route('prod.edit', $productto->id) }}" class="btn btn-link">editar</a>
-						</td>
-						<td>
-							<form action="{{ route('prod.destroy', $productto->id) }}" method="POST">
-								{{ csrf_field() }}
-								<input type="hidden" name="_method" value="DELETE">
-								<button class="btn btn-link">Borrar</button>
-							</form>
-					</td>
+							<a href="" data-target="#modal-delete-{{$productto->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>
+					    </td>
 				</tr>
+				@include('product.fragment.modal')
 				@endforeach
 			</tbody>
 		</table>
 		{!! $prodd->render() !!}
 		@include('produc.fragment.aside')
-	</div>
-	<div class="col-sm-4">
-		
 	</div>
 @endsection

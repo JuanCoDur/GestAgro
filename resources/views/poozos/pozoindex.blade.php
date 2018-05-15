@@ -3,19 +3,15 @@
 @section('content')
 	<div class="col-sm-8">
 		<h2>
-			Listado de pozos
+			Pozos
 			<a href="{{ route('pozo.create') }}" class="btn btn-primary pull-right">Nuevo</a>
 		</h2>
 		@include('poozos.fragment.info')
-		<table class="table table-hover table-striped">
+		<table class="table table-hover table-striped table-responsive">
 			<thead>
 				<tr>
 					<th>Pozo</th>
-					<th>Medidor</th>
 					<th>Ubicacion</th>
-					<th>Latitud</th>
-					<th>Longitud</th>
-					<th>Altitud</th>
 					<th colspan="3">&nbsp;</th>
 				</tr>
 			</thead>
@@ -25,26 +21,15 @@
 					<td>
 						<strong>{{ $pozoss->pozo }}</strong>
 					</td>	
-					<td>{{ $pozoss->medidor }}</td>
 					<td>{{ $pozoss->ubicacionPzo }}</td>
-					<td>{{ $pozoss->latitud }}</td>
-					<td>{{ $pozoss->longitud }}</td>
-					<td>{{ $pozoss->altitud }}</td>
-					
 					<td>
-						<a href="{{ route('pozo.show', $pozoss->id) }}" class="btn btn-link">ver</a>
+						<a href="{{ route('pozo.show', $pozoss->id) }}" class="btn btn-primary">Detalles</a>
 					</td>
 					<td>
-						<a href="{{ route('pozo.edit', $pozoss->id) }}" class="btn btn-link">editar</a>
-					</td>
-					<td>
-						<form action="{{ route('pozo.destroy', $pozoss->id) }}" method="POST">
-							{{ csrf_field() }}
-							<input type="hidden" name="_method" value="DELETE">
-							<button class="btn btn-link">Borrar</button>
-						</form>
+						<a href="" data-target="#modal-delete-{{$pozoss->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
+				@include('poozos.fragment.modal')
 				@endforeach
 			</tbody>
 		</table>

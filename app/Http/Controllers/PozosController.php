@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\pozo;
+use App\finca;
 use App\Http\Requests\PozosRequest;
 use Illuminate\Support\Facades\View;
 
@@ -18,8 +19,9 @@ class PozosController extends Controller
     }
 
  	 public function create(){
+        $fin =finca::all();
     	$poz = pozo::all();
-    	return view('poozos.create', compact('poz'));
+    	return view('poozos.create', compact('poz','fin'));
     }
 
     public function store(PozosRequest $request){
@@ -32,7 +34,7 @@ class PozosController extends Controller
         $poz->latitud = $request->latitud;
         $poz->longitud = $request->longitud;
         $poz->altitud = $request->altitud;
-    	$poz->observaciones = $request->observaciones;
+//    	$poz->observaciones = $request->observaciones;
         
     	$poz->save();
 
@@ -50,7 +52,7 @@ class PozosController extends Controller
         $poz->latitud = $request->latitud;
         $poz->longitud = $request->longitud;
         $poz->altitud = $request->altitud;
-    	$poz->observaciones = $request->observaciones;
+  //  	$poz->observaciones = $request->observaciones;
         
     	$poz->save();
 
@@ -59,19 +61,21 @@ class PozosController extends Controller
     }
 
  	public function edit($id){
+        $fin =finca::all();
     	$poz=pozo::find($id);
-    	return view('poozos.edit', compact('poz'));
+    	return view('poozos.edit', compact('poz','fin'));
     }
 
     public function show($id){
+        $fin =finca::all();
     	$poz=pozo::find($id);
-    	return view('poozos.show', compact('poz'));
+    	return view('poozos.show', compact('poz','fin'));
     }
 
     public function destroy($id){
-    	$poz=pozo::find($id);
-    	$poz->delete();
-
-    	return back()->with('info', 'Eliminado correctamente');
+    	$poz =pozo::findOrFail($id);
+        $poz->delete();
+        
+        return back()->with('info', 'Eliminado con exito');
     }
 }
