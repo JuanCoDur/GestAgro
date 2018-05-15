@@ -1,5 +1,5 @@
 
-{{--<div class="form-group">--}}
+<!--{{--<div class="form-group">--}}
     {{--<label for="">Tipo de maquiria</label>--}}
     {{--<select name="idtipov" id="idtipov" class="form-control">--}}
         {{--<option value="">Elija un tipo</option>--}}
@@ -7,7 +7,7 @@
             {{--<option value="{{ $tipo['id'] }}" >{{ $tipo['nomTipo'] }}</option>--}}
         {{--@endforeach--}}
     {{--</select>--}}
-{{--</div>--}}
+{{--</div>--}}-->
 
 <div class="form-group">
     <label for="">Finca a la que pertenece</label>
@@ -41,7 +41,7 @@
 
 <div class="form-group">
     {!! Form::label('ModelMaq','Modelo') !!}
-    {!! Form::number('ModeloMaq', null, ['class' => 'form-control','step'=>'any']) !!}
+    {!! Form::text('ModeloMaq', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

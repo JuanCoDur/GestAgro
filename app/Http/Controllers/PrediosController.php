@@ -20,6 +20,7 @@ class PrediosController extends Controller
 
  	 public function create(){
     	$fin = finca::all();
+       
     	return view('pred.create', compact('fin'));
     }
 
@@ -69,14 +70,15 @@ class PrediosController extends Controller
     }
 
     public function show($id){
+        $fin = finca::all();
     	$pre=predio::find($id);
-    	return view('pred.show', compact('pre'));
+    	return view('pred.show', compact('pre','fin'));
     }
 
     public function destroy($id){
-    	$pre=predio::find($id);
-    	$pre->delete();
-
-    	return back()->with('info', 'Eliminado correctamente');
+    	$pre =predio::findOrFail($id);
+        $pre->delete();
+        
+        return back()->with('info', 'Eliminado con exito');
     }
 }

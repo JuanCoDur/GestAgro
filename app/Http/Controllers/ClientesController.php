@@ -33,7 +33,7 @@ class ClientesController extends Controller
     	$cli->RFCte = $request->RFCte;
     	$cli->save();
 
-    	return redirect()->route('client.index')
+    	return redirect()->route('clients.index')
     					 ->with('info', 'Creado correctamente');
     }
 
@@ -54,18 +54,18 @@ class ClientesController extends Controller
  	public function edit($id){
     	
     	$cli=cliente::find($id);
-    	return view('cliente.edit', compact('cli'));
+    	return view('client.edit', compact('cli'));
     }
 
     public function show($id){
     	$cli=cliente::find($id);
-    	return view('cliente.show', compact('cli'));
+    	return view('client.show', compact('cli'));
     }
 
     public function destroy($id){
-    	$cli=cliente::find($id);
-    	$cli->delete();
-
-    	return back()->with('info', 'Campo eliminado correctamente');
+    	$cli =cliente::findOrFail($id);
+        $cli->delete();
+        
+        return back()->with('info', 'El cliente fue eliminado');
     }
 }

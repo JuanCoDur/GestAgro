@@ -68,18 +68,18 @@ class FincasController extends Controller
 
 
     public function show($id){
-
+        $us = User::all();
     	$finc = finca::find($id);
 
-    	return view('finc.show', compact('finc'));
+    	return view('finc.show', compact('finc','us'));
     }
 
     public function destroy($id){
 
-    	$finc = finca::find($id);
-    	$finc->delete();
-
-    	return back()->with('info', 'El producto fue eliminado');
+    	$finc =finca::findOrFail($id);
+        $finc->delete();
+        
+        return back()->with('info', 'El empleado fue eliminado');
     }
   
 }

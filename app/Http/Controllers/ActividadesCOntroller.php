@@ -74,6 +74,6 @@ class ActividadesCOntroller extends Controller
     	$act = actividad::findOrFail($id);
     	$act->delete();
         
-    	return back()->with('info', 'El empleado fue eliminado');
+    	return back()->with('info', 'Eliminado con exito');
     }
 }

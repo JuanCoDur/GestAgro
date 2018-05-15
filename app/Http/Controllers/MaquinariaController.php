@@ -70,13 +70,15 @@ class MaquinariaController extends Controller
     }
 
     public function show($id){
+        $fin = finca::all();
+        $marc = marca::all();
         $maq=maquinaria::find($id);
-        return view('maquinaria.show', compact('maq'));
+        return view('maquinaria.show', compact('fin','marc', 'maq'));
     }
 
     public function destroy($id){
-        $veh=vehiculos::find($id);
-        $veh->delete();
+        $maq =maquinaria::findOrFail($id);
+        $maq->delete();
 
         return back()->with('info', 'Eliminado correctamente');
     }

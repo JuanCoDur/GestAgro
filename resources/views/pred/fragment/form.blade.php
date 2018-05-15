@@ -35,17 +35,17 @@
 
 <div class="form-group">
 	{!! Form::label('latitud','Latitud') !!}
-	{!! Form::text('latitud', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('latitud', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">
 	{!! Form::label('longitud','Longitud') !!}
-	{!! Form::text('longitud', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('longitud', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">
 	{!! Form::label('altitud','Altitud') !!}
-	{!! Form::text('altitud', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('altitud', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">

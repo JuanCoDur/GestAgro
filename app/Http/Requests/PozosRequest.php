@@ -28,7 +28,6 @@ class PozosRequest extends FormRequest
             'pozo' => 'required',
             'medidor' => 'required',
             'ubicacionPzo' => 'required',
-            'tipRiego' => 'required',
             'latitud' =>'required',
             'longitud' =>'required',
             'altitud' =>'required'

@@ -55,9 +55,9 @@ class MarcaController extends Controller
     }
 
     public function destroy($id){
-    	$marc=marca::find($id);
-    	$marc->delete();
-
-    	return back()->with('info', 'La marca fue eliminada');
+    	$marc =marca::findOrFail($id);
+        $marc->delete();
+        
+        return back()->with('info', 'Eliminado con exito');
     }
 }

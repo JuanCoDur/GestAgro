@@ -1,4 +1,13 @@
 <div class="form-group">
+    <label for="">Finca a la que pertenece</label>
+    <select name="idFiin" id="idFiin" class="form-control">
+        <option value="">Elija finca</option>
+        @foreach($fin as $finca)
+            <option value="{{ $finca['id'] }}" >{{ $finca['nomfinca'] }}</option>
+        @endforeach
+    </select>
+</div>
+<div class="form-group">
 	{!! Form::label('pozo','Nombre del pozo') !!}
 	{!! Form::text('pozo', null, ['class' => 'form-control']) !!}
 </div>
@@ -10,22 +19,22 @@
 
 <div class="form-group">
 	{!! Form::label('ubicacionPzo','Ubicacion') !!}
-	{!! Form::text('ubicacionPzo',null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('ubicacionPzo',null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">
 	{!! Form::label('latitud','Latitud') !!}
-	{!! Form::text('latitud', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('latitud', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">
 	{!! Form::label('longitud','Longitud') !!}
-	{!! Form::text('longitud', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('longitud', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">
 	{!! Form::label('altitud','Altitud') !!}
-	{!! Form::text('altitud', null, ['class' => 'form-control','step'=>'any']) !!}
+	{!! Form::number('altitud', null, ['class' => 'form-control','step'=>'any']) !!}
 </div>
 
 <div class="form-group">

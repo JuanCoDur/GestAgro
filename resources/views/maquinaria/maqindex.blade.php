@@ -2,7 +2,7 @@
 @section('content')
     <div class="col-sm-8">
         <h2>
-            Lista de maquinaria
+            Maquinaria
             <a href="{{ route('maqui.create') }}" class="btn btn-success pull-right">Nuevo</a>
         </h2>
         @include('maquinaria.fragment.info')
@@ -34,17 +34,11 @@
                             <td>
                                 <a href="{{ route('maqui.show', $mqn->id) }}" class="btn btn-info">Detalles</a>
                             </td>
-                            {{--<td>--}}
-                                {{--<a href="{{ route('maqui.edit', $mqn->id) }}" class="btn btn-info">Editar</a>--}}
-                            {{--</td>--}}
-                            {{--<td>--}}
-                                {{--<form action="{{ route('clasifi.destroy', $mqn->id) }}" method="POST">--}}
-                                    {{--{{ csrf_field() }}--}}
-                                    {{--<input type="hidden" name="_method" value="DELETE">--}}
-                                    {{--<button class="btn btn-danger">Borrar</button>--}}
-                                {{--</form>--}}
-                            {{--</td>--}}
+                            <td>
+                            <a href="" data-target="#modal-delete-{{$mqn->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>
+                            </td>
                         </tr>
+                        @include('maquinaria.fragment.modal')
                     @endforeach
                     </tbody>
                 </table>

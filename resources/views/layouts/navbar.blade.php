@@ -61,6 +61,7 @@
                     <ul id="submenu-3" class="collapse">
                         <li><a href="{{ route('maqui.index') }}"><i class="fa fa-angle-double-right"></i> Maquinaria</a></li>
                         <li><a href="{{ route('vehic.index') }}"><i class="fa fa-angle-double-right"></i> Vehiculos</a></li>
+                        <li><a href="{{ route('clasifi.index') }}"><i class="fa fa-angle-double-right"></i> Clasificaciones</a></li>
                         <li><a href="{{ route('tipveh.index') }}"><i class="fa fa-angle-double-right"></i> Tipo Vehiculos</a></li>
                         <li><a href="{{ route('marca.index') }}"><i class="fa fa-angle-double-right"></i> Marcas</a></li>
                     </ul>
