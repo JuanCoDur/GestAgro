@@ -20,13 +20,13 @@
 							<strong>{{ $productto->nomProducto }}</strong>
 						</td>
 						<td>
-							<a href="{{ route('prod.show', $productto->id) }}" class="btn btn-link">ver</a>
+							<a href="{{ route('prod.show', $productto->id) }}" class="btn btn-primary">Detalles</a>
 						</td>
 						<td>
 							<a href="" data-target="#modal-delete-{{$productto->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>
 					    </td>
 				</tr>
-				@include('product.fragment.modal')
+				@include('produc.fragment.modal')
 				@endforeach
 			</tbody>
 		</table>

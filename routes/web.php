@@ -49,3 +49,5 @@ Route::resource('pozo','PozosController');
 
 Route::resource('maqui','MaquinariaController');
 
+Route::resource('comp','ComprasController');
+

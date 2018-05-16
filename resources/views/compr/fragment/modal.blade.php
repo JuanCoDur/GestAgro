@@ -1,8 +1,8 @@
-<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="1" id="modal-delete-{{$predidio->id}}">
-	{{Form::Open(array('action'=>array('PrediosController@destroy', $predidio->id),'method'=>'delete'))}};
+<div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="1" id="modal-delete-{{$comprass->id}}">
+	{{Form::Open(array('action'=>array('ComprasController@destroy', $comprass->id),'method'=>'delete'))}};
 	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="model-header" >
+		<div class="modal.content">
+			<div class="model-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">x</span>
 				</button>

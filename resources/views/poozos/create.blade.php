@@ -15,8 +15,4 @@
 		{!! Form::close() !!}
 	</div>
 	
-	<div class="col-sm-4">
-		@include('poozos.fragment.aside')
-	</div>
-
 @endsection

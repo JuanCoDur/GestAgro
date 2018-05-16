@@ -12,9 +12,5 @@
 			@include('pred.fragment.form')
 		{!! Form::close() !!}
 	</div>
-	
-	<div class="col-sm-4">
-		@include('pred.fragment.aside')
-	</div>
 
 @endsection

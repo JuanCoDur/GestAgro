@@ -46,3 +46,8 @@ body{
     background: none;
 
 }
+
+.modal-dialog .modal-content> div{
+	font-color:#fff;
+	background-color: #fff;
+}

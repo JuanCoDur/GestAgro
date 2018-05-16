@@ -21,7 +21,7 @@ class ProductosController extends Controller
  	 public function create(){
     	 $class =clasificacion::all();
         $prodd = producto::all();
-        return view('product.create', compact('class','prodd'));
+        return view('produc.create', compact('class','prodd'));
     }
 
     public function store(ProductosRequest $request){

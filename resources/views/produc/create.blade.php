@@ -14,9 +14,4 @@
 			@include('produc.fragment.form')
 		{!! Form::close() !!}
 	</div>
-	
-	<div class="col-sm-4">
-		@include('produc.fragment.aside')
-	</div>
-
 @endsection

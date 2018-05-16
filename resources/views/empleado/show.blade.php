@@ -7,7 +7,7 @@
 			{!! Form::model($emplea, ['route' => ['empleado.update', $emplea->id], 'method' => 'PUT']) !!}
 			    <div class="form-group">
                	    	<input type="button" class="btn btn-primary" id="activ" value="Editar">
-                    	<button class="btn btn-primary" type="submint">Guardar</button>
+                    	<button class="btn btn-primary pull-right" type="submint">Guardar</button>
                     	<a class="btn btn-default btn-danger btn-close" href="{{ route('empleado.index') }}">Cancelar</a>
                 </div>
 			    <div class="form-group row">

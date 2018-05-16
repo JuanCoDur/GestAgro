@@ -2,10 +2,10 @@
 
 @section('content')
 	<div class="col-sm-8">
-		<h5 class="rgba-orange-strong">
-			Lista de empleados
+		<h4 class="rgba-orange-strong">
+			<strong>Lista de empleados</strong> 
 			<a href="{{ route('empleado.create') }}" class="btn btn-primary pull-right">Nuevo</a>
-		</h5>
+		</h4>
 		@include('empleado.fragment.info')
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="table-responsive">

@@ -16,7 +16,6 @@
     </div>
 
     <div class="col-sm-4">
-        @include('maquinaria.fragment.aside')
     </div>
 
 @endsection

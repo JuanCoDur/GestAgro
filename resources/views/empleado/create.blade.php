@@ -2,10 +2,10 @@
 @section('content')
 
 	<div class="col-sm-8">
-		<h5>
-			Nuevo Empleado
+		<h4>
+			<strong>Nuevo Empleado</strong>
 			<a href="{{ route('empleado.index') }}"class="btn btn-default pull-right">Listado</a>
-		</h5>
+		</h4>
 
 		@include('empleado.fragment.error')
 
@@ -14,8 +14,5 @@
 		@include('empleado.fragment.form')
 
 		{!! Form::close() !!}
-	</div>
-	<div class="col-sm-4">
-		@include('empleado.fragment.aside')
 	</div>
 @endsection

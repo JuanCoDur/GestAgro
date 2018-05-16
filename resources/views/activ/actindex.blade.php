@@ -22,7 +22,7 @@
 							<strong>{{ $acti->actividadRealizada }}</strong>
 						</td>									
 						<td>
-							<a href="{{ route('activities.show', $acti->id) }}" class="btn btn-link">Detalles</a>
+							<a href="{{ route('activities.show', $acti->id) }}" class="btn btn-primary">Detalles</a>
 						</td>
 						<td>
 							<a href="" data-target="#modal-delete-{{$acti->id}}" data-toggle="modal"><button type="submit" class="btn btn-danger">Eliminar</button></a>

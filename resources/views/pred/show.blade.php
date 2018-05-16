@@ -125,7 +125,6 @@
 
 		{!! Form::close() !!}
 		<div class="col-sm-4">
-			@include('pred.fragment.aside')
 		</div>
 		</div>
 	</div>

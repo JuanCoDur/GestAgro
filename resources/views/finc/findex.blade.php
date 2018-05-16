@@ -3,9 +3,9 @@
 
 @section('content')
 	<div class="col-sm-8">
-		<h5> Listado de fincas 
-			<a href="{{ route('finca.create') }}" class="btn btn-primary pull-right">Nuevo</a>
-		</h5>
+		<h4> <strong>Finca </strong>
+			<!--<a href="{{ route('finca.create') }}" class="btn btn-primary pull-right">Nuevo</a>-->
+		</h4>
 		@include('finc.fragment.info')
 		<table class="table table-hover table-striped">
 			<thead>

@@ -54,7 +54,7 @@
                                     Iniciar
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn btn-success" href="{{ route('password.request') }}">
                                     Olvidaste tu contraseña?
                                 </a>
                             </div>
