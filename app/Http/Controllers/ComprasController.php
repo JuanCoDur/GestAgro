@@ -3,38 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\compra;
-use App\finca;
-use App\proveedor;
-use App\producto;
-use DB;
-use App\detallecompra;
-use App\Http\Requests\ComprasRequest;
-use Illuminate\Support\Facades\View;
-//use Illuminate\Support\Facades\Redirect;
 
+//use App\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
+//use Illuminate\Support\Facades\View;
+use App\Http\Requests\ComprasRequest;
+use App\compra;
+use App\detallecompra;
+use DB;
+//use App\finca;
+//use App\proveedor;
+//use App\producto;
 use Carbon\Carbon;
 use Response;
 use Illuminate\Support\Collection;
-
 
 class ComprasController extends Controller
 {
      public function __construct(){
         $this->middleware('auth');
     }
-    public function index(Requests $request){
+    public function index(Request $request){
     	if ($request) {
     		$query=trim($request->get('searchText'));
     		$compr=DB::table('compras as c')
     		 ->join('proveedores as p', 'c.idProv','=','p.id')
     		 ->join('detallescompras as dc','c.folioCra','=','dc.FolCpra')
     		 ->select('c.folioCra','c.fecCompra','p.nomProv',DB::raw('sum(dc.cantidadCom*precioCom) as total'))
-    		 ->where('c.folioCra','LIKE','%'.$query.'%')
+    		 ->where('p.nomProv','LIKE','%'.$query.'%')
     		 ->orderBy('c.folioCra','DESC')	
     		 ->groupBy('c.folioCra','c.fecCompra','p.nomProv')
-    		 ->paginate('7');
-    		 return view('compr.coindex', compact('query','compr'));
+    		 ->paginate(7);
+    		 return view('compr.coindex',["compras"=>$compr,"searchText"=>$query]);
 
     		} 
     	//$com= compra::orderBy('id','DESC')->paginate();
@@ -42,7 +43,7 @@ class ComprasController extends Controller
     }
 
     public function create(){
-    	$prov=DB::table('proveedores');
+    	$prov=DB::table('proveedores')->get();
     	$produ=DB::table('productos as prod')
     		->select('prod.nomProducto','prod.id')
     		->get();
@@ -58,11 +59,11 @@ class ComprasController extends Controller
     		$mytime= Carbon::now('America/Mexico_City');
     		$com->fecCompra=$mytime->toDateTimeString();
     		$com->totalCompra=$request->get('totalCompra');
-    		$com->save()
+    		$com->save();
     		//(para que sean introducidos por el us)datos de detallecompra se crea una variable cualquiera que seran convertidas en array y tambien toman del formulario
     		$idPro=$request->get('idPro');
-    		$cantidadCom=$request->get('cantidadCom');
-    		$precioCom=$request->get('precioCom');
+    		$cantid=$request->get('cantidadCom');
+    		$precom=$request->get('precioCom');
     		//array creado el se jecuta mientras que el contador sea menor de los idprod
     		$contador = 0;
     		while ($contador < count($idPro)) {
@@ -90,17 +91,25 @@ class ComprasController extends Controller
     		 ->where('c.folioCra','=',$id)	//se obtiene solo el ingreso que esta recibiendo show
     		 ->first();
 
-    		 $detalle=DB::table('detallescompras as dc')
-    		 ->join('productos as p','dc.idPro','=','p.id')
+    		 /*$detalle=DB::table('detallescompras as dc')
+    		 ->join('inventarios as in','dc.idPro','=','in.idProd')
+             ->join('producto as p','p.id','=','in.idProd')
     		 ->select('p.nomProducto as produucto','dc.cantidadCom','dc.precioCom')
     		 ->	where('dc.FolCpra','=',$id)
-    		 ->get();
-    	return view("compr.show",["com"=$com,"detalle"=$detalle]);
+    		 ->get();*/
+             $detalle=DB::table('inventarios as in')
+             ->join('productos as p','in.idProd','=','p.id')
+             ->join('detallescompras as dc','in.idProd','=','dc.idPro')
+             ->select('p.nomProducto as produucto','dc.cantidadCom','dc.precioCom')
+             -> where('dc.FolCpra','=',$id)
+             ->get();
+    	//return view("compr.show",["com"=$com,"detalle"=$detalle]);
+             return view('compr.show', compact('com','detalle'));
     }
 
     public function destroy(){
     	$com=compra::findOrFalil($id);
     	$com=update();
-    	return Redirect::to('copr')
+    	return Redirect::to('copr');
     }
 }
