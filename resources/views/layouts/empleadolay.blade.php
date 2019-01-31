@@ -9,7 +9,7 @@
 
 	</head>
 <body>
-	<div class:"container rgba-green-strong">
+	<div class= "container rgba-green-strong" >
 		<div clas="row rgba-green-strong">
 			<div class="col-xs-12 rgba-green-strong">
 				<h4 class="page-header text-center"> Crud Empleados</h4>

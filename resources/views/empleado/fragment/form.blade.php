@@ -72,7 +72,7 @@
 </div>
 
 <div class="form-group row">
-	<label for="discapacidades" class="col-md-2 col-form-label">discapacidades</label>
+	<label for="discapacidades" class="col-md-2 col-form-label">Discapacidades</label>
     <div class="col-sm-8">
 		<input id="discapacidades" type="text" class="form-control" name="discapacidades" placeholder="Discapacidades">
         	@if ($errors->has('discapacidades'))
@@ -108,7 +108,7 @@
 </div>
 
 <div class="form-group row">
-	<label for="celemp" class="col-md-2 col-form-label">Nombre</label>
+	<label for="celemp" class="col-md-2 col-form-label">Número Celular</label>
     <div class="col-sm-8">
 		<input id="celemp" type="number" class="form-control" name="celemp" placeholder="Numero celular">
         	@if ($errors->has('celemp'))
@@ -120,7 +120,7 @@
 </div>
 
 <div class="form-group row">
-	<label for="email" class="col-md-2 col-form-label">Correo electronico</label>
+	<label for="email" class="col-md-2 col-form-label">Correo electrónico</label>
     <div class="col-sm-8">
 		<input id="email" type="email" class="form-control" name="email" placeholder="ejemplo@ejemplo.com">
         	@if ($errors->has('email'))
@@ -132,9 +132,9 @@
 </div>
 
 <div class="form-group row">
-	<label for="preparacion" class="col-md-2 col-form-label">Nivel academico</label>
+	<label for="preparacion" class="col-md-2 col-form-label">Nivel académico</label>
     <div class="col-sm-8">
-		<input id="preparacion" type="text" class="form-control" name="preparacion" placeholder="Nivel academico">
+		<input id="preparacion" type="text" class="form-control" name="preparacion" placeholder="Nivel académico">
         	@if ($errors->has('preparacion'))
             	<span class="help-block">
                 	<strong>{{ $errors->first('preparacion') }}</strong>

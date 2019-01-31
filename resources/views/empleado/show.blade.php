@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="form-group row">
-                	<label for="discapacidades" class="col-md-2 col-form-label">discapacidades</label>
+                	<label for="discapacidades" class="col-md-2 col-form-label">Discapacidades</label>
                     <div class="col-sm-8">
                 		<input id="discapacidades" type="text" class="form-control" name="discapacidades"  placeholder="Discapacidades" value="{{ $emplea->discapacidades }}" required autofocus>
                         	@if ($errors->has('discapacidades'))

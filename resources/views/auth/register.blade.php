@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-3 control-label"></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" placeholder="Nombre completo" value="{{ old('name') }}" required autofocus>
+                                <input style="color: white" id="name" type="text" class="form-control" name="name" placeholder="Nombre completo" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                             <label for="email" class="col-md-3 control-label"></label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" placeholder="ejemplo@hotmail.com" value="{{ old('email') }}" required>
+                                <input style="color: white" id="email" type="email" class="form-control" name="email" placeholder="ejemplo@ejemplo.com" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -43,7 +43,7 @@
                             <label for="password" class="col-md-3 control-label"></label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" placeholder="Contraseña" name="password" required>
+                                <input style="color: white" id="password" type="password" class="form-control" placeholder="Contraseña" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@
                             <label for="password-confirm" class="col-md-3 control-label"></label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" placeholder="Contraseña" name="password_confirmation" required>
+                                <input style="color: white" id="password-confirm" type="password" class="form-control" placeholder="Repetir Contraseña" name="password_confirmation" required>
                             </div>
                         </div>
 
