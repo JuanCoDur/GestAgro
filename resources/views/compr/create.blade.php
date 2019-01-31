@@ -33,6 +33,12 @@
 				</select>
 			</div>
 		</div>
+		<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12">
+			<div class="form-group">
+				<label for="finca">fincas</label>
+				<input type="number" name="idFnca" id="idFnca" class="form-control" placeholder="Precio de compra" value="">
+			</div>
+		</div>
 	</div>
 	<div class="row">
 		<div class="panel panel-primary">

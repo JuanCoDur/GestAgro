@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 //use App\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 //use Illuminate\Support\Facades\View;
@@ -12,8 +14,9 @@ use App\Http\Requests\ComprasRequest;
 use App\compra;
 use App\detallecompra;
 use DB;
-//use App\finca;
-//use App\proveedor;
+use App\finca;
+//use App\proveedores;
+//use App\users;
 //use App\producto;
 use Carbon\Carbon;
 use Response;
@@ -43,10 +46,16 @@ class ComprasController extends Controller
     }
 
     public function create(){
+        //$id = Auth::id();
     	$prov=DB::table('proveedores')->get();
     	$produ=DB::table('productos as prod')
     		->select('prod.nomProducto','prod.id')
     		->get();
+        //$fin=DB::table('fincas as finc')
+          //  ->join('users as us','us.id','=','finc.us_id')
+            //->select('finc.id','finc.nomfinca','us_id')
+            //->where('us_id','=','us_id')
+            //->get();
     	return view('compr.create',["provee"=>$prov,"producc"=>$produ]);
     }
     public function store (ComprasRequest $request){
