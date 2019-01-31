@@ -70,9 +70,9 @@
                     <a href="#" data-toggle="collapse" data-target="#submenu-4"><i class="fa fa-fw fa-star"></i>  Productos <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                     <ul id="submenu-4" class="collapse">
                         <li><a href="{{ route('prod.index') }}"><i class="fa fa-angle-double-right"></i> listado y edicion</a></li>
-                       <!-- <li><a href="#"><i class="fa fa-angle-double-right"></i> Inventario</a></li>
+                       <!-- <li><a href="#"><i class="fa fa-angle-double-right"></i> Inventario</a></li>-->
                         <li><a href="{{ route('comp.index') }}"><i class="fa fa-angle-double-right"></i> Compras</a></li>
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i> Ventas</a></li>-->
+                        <!--<li><a href="#"><i class="fa fa-angle-double-right"></i> Ventas</a></li>-->
                     </ul>
                 </li>
                 <li>
